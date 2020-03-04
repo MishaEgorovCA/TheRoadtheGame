@@ -1,79 +1,82 @@
 {
-    "scenarios": [
+  "scenarios": [
+    {
+      "text": "",
+      "image": "",
+      "choices": [
         {
-            "text": "",
-            "image": "",
-            "choices": [
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                },
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                },
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                }
-            ],
-            "repeatable": false
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
         },
         {
-            "text": "",
-            "image": "",
-            "choices": [
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                },
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                },
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                }
-            ],
-            "repeatable": false
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
         },
         {
-            "text": "",
-            "image": "",
-            "choices": [
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                },
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                },
-                {
-                    "text": "",
-                    "affects": [0,0,0],
-                    "unlocks": false,
-                    "chained": false
-                }
-            ],
-            "repeatable": false
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
         }
-    ]
+      ],
+      "repeatable": false,
+      "locked": false
+    },
+    {
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
+        },
+        {
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
+        },
+        {
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
+        }
+      ],
+      "repeatable": false,
+      "locked": false
+    },
+    {
+      "text": "",
+      "image": "",
+      "choices": [
+        {
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
+        },
+        {
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
+        },
+        {
+          "text": "",
+          "affects": [ 0, 0, 0 ],
+          "unlocks": false,
+          "chained": false
+        }
+      ],
+      "repeatable": false,
+      "locked": false
+    }
+  ]
 }
