@@ -4,9 +4,18 @@ var sanity = 50;
 
 //var scenarios = JSON.parse().scenarios;
 
+function choice(cID) {
+
+}
+
 function newCard(sID) {
+    var cardElem = document.getElementById("card");
     var infoElem = document.getElementById("cardInfo");
     var choiceElem = document.getElementById("cardChoices");
+
+    var newCardElem = document.createElement(); //or copy? somehow have a new overlap old
+
+
 }
 
 function changeStats(changes = []) {
