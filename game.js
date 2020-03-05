@@ -2,10 +2,11 @@ var hunger = 50;
 var health = 50;
 var sanity = 50;
 
-//var scenarios = JSON.parse();
+//var scenarios = JSON.parse().scenarios;
 
-function newCard(text, choices) {
-    var cardHtml = document.getElementById("").innerHTML;
+function newCard(sID) {
+    var infoElem = document.getElementById("cardInfo");
+    var choiceElem = document.getElementById("cardChoices");
 }
 
 function changeStats(changes = []) {
@@ -19,10 +20,9 @@ function changeStats(changes = []) {
 
     elems = [document.getElementById("hunger"), document.getElementById("health"), document.getElementById("sanity")];
 
-    var interval = setInterval(frame, 10);
+    var interval = setInterval(frame, 25);
     function frame() {
         if (stats[0] === tStats[0] && stats[1] === tStats[1] && stats[2] === tStats[2]) {
-            console.log("done");
             clearInterval(interval);
         } else {
             stats.forEach((stat,i) => {

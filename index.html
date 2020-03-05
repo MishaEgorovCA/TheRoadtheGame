@@ -37,6 +37,7 @@
         <div class="w3-display-topright w3-margin-right" style="text-shadow:1px 1px 0 #444">Score: <span class="w3-xlarge">0</span></div>
         <!--Credit-->
         <div class="w3-display-bottomright w3-margin-right w3-text-light-gray w3-small" style="text-shadow:1px 1px 0 #444">A collaboration between:<br /><span class="w3-small">Kentaro, Misha, Ariel</span></div>
+        
         <!--Main Game Info-->
         <div class="w3-card-4" style="margin:auto;width:580px">
 
@@ -45,106 +46,68 @@
                 <div class="w3-third w3-container">
                     <h2>Hunger</h2>
                     <div class="w3-grey w3-margin">
-                        <div class="w3-dark-grey" style="width:75%;height:24px" id="hunger"> </div>
+                        <div class="w3-dark-grey" style="width:50%;height:24px" id="hunger"> </div>
                     </div>
                 </div>
                 <div class="w3-third w3-container">
                     <h2>Health</h2>
                     <div class="w3-grey w3-margin">
-                        <div class="w3-dark-grey" style="width:10%;height:24px" id="health"> </div>
+                        <div class="w3-dark-grey" style="width:50%;height:24px" id="health"> </div>
                     </div>
                 </div>
                 <div class="w3-third w3-container">
                     <h2>Sanity</h2>
                     <div class="w3-grey w3-margin">
-                        <div class="w3-dark-grey" style="width:35%;height:24px" id="sanity"> </div>
+                        <div class="w3-dark-grey" style="width:50%;height:24px" id="sanity"> </div>
                     </div>
                 </div>
             </div>
 
             <!--Scenario Info-->
-            <div class="w3-container w3-display-container" style="height:475px">
+            <div class="w3-container w3-display-container" style="height:475px" id="cardInfo">
                 <p>You find a dog.</p>
-                <img class="w3-display-middle" src="https://dl1.cbsistatic.com/i/2019/07/20/4a278388-7308-4e38-9286-935066045f0a/2675af4349c40f86bc7e6d6b0184e27d/imgingest-2850156250283173494.png">
+                <!--<img class="w3-display-middle" src="https://dl1.cbsistatic.com/i/2019/07/20/4a278388-7308-4e38-9286-935066045f0a/2675af4349c40f86bc7e6d6b0184e27d/imgingest-2850156250283173494.png">-->
             </div>
 
             <!--Choices-->
-            <footer class="w3-light-gray" style="height:250px">
+            <footer class="w3-light-gray" style="height:250px" id="cardChoices">
 
-                <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id01').style.display='block'">
+                <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="choice(1);">
                     Pet the dog. The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog. 
                 </p>
 
-                <div id="id01" class="w3-modal">
-                    <div class="w3-modal-content">
-                        <div class="w3-container">
-                            <p>You pet the dog and the dog barks back wagging it's tail.</p>
-                            <p>This brings some joy to you and the boy.</p>
-                        </div>
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button" style="text-align:center;width:100%">Continue</span>
-                    </div>
-                </div>
-
-                <button class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id02').style.display='block'">
+                <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id02').style.display='block'">
                     Feed the dog
-                </button>
+                </p>
 
-                <div id="id02" class="w3-modal">
-                    <div class="w3-modal-content">
-                        <div class="w3-container">
-                            <p>You give the dog some of your food and the dog happily eats wagging it's tail.</p>
-                            <p>This brings some joy to you and the boy, but you now have less food to spare.</p>
-                        </div>
-                        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button" style="text-align:center;width:100%">Continue</span>
-                    </div>
-                </div>
-
-                <button class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id03').style.display='block'">
+                <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id03').style.display='block'">
                     Eat the dog
-                </button>
+                </p>
 
-                <div id="id03" class="w3-modal">
-                    <div class="w3-modal-content">
-                        <div class="w3-container">
-                            <p>You catch the dog despite the boy's crys and strangle it.</p>
-                            <p>Today you eat a fullfilling meal but leave the boy unhappy.</p>
-                        </div>
-                        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button" style="text-align:center;width:100%">Continue</span>
-                    </div>
-                </div>
-
-                <button class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id04').style.display='block'">
+                <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id04').style.display='block'">
                     Leave the dog alone
-                </button>
+                </p>
 
-                <div id="id04" class="w3-modal">
-                    <div class="w3-modal-content">
-                        <div class="w3-container">
-                            <p>You let the dog run. The boy watches teh dog carefully.</p>
-                            <p>The boy is a bit upset that you didn't help the dog.</p>
-                        </div>
-                        <span onclick="document.getElementById('id04').style.display='none'" class="w3-button" style="text-align:center;width:100%">Continue</span>
-                    </div>
-                </div>
-
-                <button class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id05').style.display='block'">
+                <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id05').style.display='block'">
                     ...
-                </button>
-
-                <div id="id05" class="w3-modal">
-                    <div class="w3-modal-content">
-                        <div class="w3-container">
-                            <p>Room for more choices...</p>
-                            <p>...</p>
-                        </div>
-                        <span onclick="document.getElementById('id05').style.display='none'" class="w3-button" style="text-align:center;width:100%">Continue</span>
-                    </div>
-                </div>
+                </p>
 
             </footer>
 
         </div>
     </div>
+
+    <!--Loose-->
+    <div id="loose" class="w3-modal">
+      <div class="w3-modal-content">
+          <div class="w3-container">
+              <p>You have died of ____</p>
+              <p>You survived ____ days and reached a score of ____.</p>
+          </div>
+          <span onclick="document.getElementById('loose').style.display='none'" class="w3-button" style="text-align:center;width:100%">View Leaderboard</span>
+      </div>
+  </div>
+
     <script type="text/javascript" src="game.js"></script>
 </body>
 
