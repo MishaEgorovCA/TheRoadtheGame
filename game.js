@@ -14,7 +14,7 @@ function choice(cID) {
     else if (health <= 0) { endGame("you loose because you got too sick"); }
     else if (health >= 100) { endGame("you loose because you were too healthy????? maybe some bad guys see your good health and eat your fresh meat up? idk"); }
     else if (sanity <= 0) { endGame("you loose because you went insane"); }
-    else if (sanity >= 100) { endGame("you loose because you fall into a state of bliss and stop caring about survival believing everything is great, and die."); }
+    else if (sanity >= 100) { endGame("you loose because you fall into a state of bliss and stop caring about survival believing everything is great, and die"); }
     else {
 
 
