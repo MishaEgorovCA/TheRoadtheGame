@@ -12,7 +12,7 @@ var storyEvents = [];
 scenarios.forEach((scene,i)=>{
 if (scene.story) {
     storyEvents.push(i);
-} else {
+} else if (!scene.locked){
     availableRandomEvents.push(i);
 }
 
