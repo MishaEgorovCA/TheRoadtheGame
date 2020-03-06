@@ -6,6 +6,18 @@ var currentScenario = 0;
 
 var scenarios = JSON.parse(rawData).scenarios;
 
+var availableRandomEvents = [];
+var storyEvents = [];
+
+scenarios.forEach((scene,i)=>{
+if (scene.story) {
+    storyEvents.push(i);
+} else {
+    availableRandomEvents.push(i);
+}
+
+});
+
 function choice(cID) {
     changeStats(scenarios[currentScenario].choices[cID].affects);
 
@@ -25,6 +37,7 @@ function choice(cID) {
 
 function endGame(reason) {
     document.getElementById("card").remove();
+    document.getElementById("body").style.backgroundImage = "url('resources/tenor.gif')";
     setTimeout(endScreen,2500);
     function endScreen() {
         alert(reason);
@@ -33,7 +46,14 @@ function endGame(reason) {
 }
 
 
-function newCard(sID) {
+function newCard(sID,custom) {
+    var scenario;
+    if (custom){
+        scenario = custom;
+    } else {
+        scenario = scenarios[sID];
+    }
+    
     var cardElem = document.getElementById("card");
 
     var newCardElem = cardElem.cloneNode(true);
@@ -43,14 +63,14 @@ function newCard(sID) {
     var infoElem = document.getElementById("cardInfo");
     var choiceElem = document.getElementById("cardChoices");
 
-    infoElem.innerHTML = `<p>${scenarios[sID].text}</p>`;
+    infoElem.innerHTML = `<p>${scenario.text}</p>`;
 
-    if (scenarios[sID].image) {
+    if (scenario.image) {
         //IMAGE FORMAT
     }
 
     choiceElem.innerHTML = "";
-    scenarios[sID].choices.forEach((choice, i) => {
+    scenario.choices.forEach((choice, i) => {
         choiceElem.innerHTML += `
             <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="choice(${i});">
             ${choice.text}
