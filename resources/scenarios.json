@@ -1,55 +1,55 @@
 {
   "scenarios": [
     {
-      "text": "test",
+      "text": "Test scenario 1",
       "image": "",
       "choices": [
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "+10 +40 +25",
+          "affects": [ 10, 40, 25 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "-50 -50 -50",
+          "affects": [ -50, -50, -50 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "+5 -5 +5",
+          "affects": [ 5, -5, 5 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         }
       ],
       "repeatable": false,
-      "story":  false,
+      "story": false,
       "locked": false
     },
     {
-      "text": "",
+      "text": "Test scenario 2",
       "image": "",
       "choices": [
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "+1 +2 +3",
+          "affects": [ 1, 2, 3 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "+50 +50 +50",
+          "affects": [ 50, 50, 50 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
-          "text": "",
+          "text": "+0 +0 +0",
           "affects": [ 0, 0, 0 ],
           "unlocks": false,
           "locks": false,
@@ -61,26 +61,26 @@
       "locked": false
     },
     {
-      "text": "",
+      "text": "Test scenario 3",
       "image": "",
       "choices": [
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "-100 -1000 +900",
+          "affects": [ -100, -1000, 900 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "+100 +100 -100",
+          "affects": [ 100, 100, 100 ],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
-          "text": "",
-          "affects": [ 0, 0, 0 ],
+          "text": "+3 +3 +3",
+          "affects": [ 3, 3, 3 ],
           "unlocks": false,
           "locks": false,
           "chained": false
