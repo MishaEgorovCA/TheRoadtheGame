@@ -2,11 +2,38 @@ var hunger = 50;
 var health = 50;
 var sanity = 50;
 
-//var scenarios = JSON.parse().scenarios;
+/*var rawFile = new XMLHttpRequest();
+rawFile.open("GET", "resources/scenarios.json", false);
+rawFile.onreadystatechange = function ()
+{
+    if(rawFile.readyState === 4)
+    {
+        if(rawFile.status === 200 || rawFile.status == 0)
+        {
+            var allText = rawFile.responseText;
+            alert(allText);
+        }
+    }
+}
+rawFile.send(null);
+
+var scenarios = JSON.parse(rawFile).scenarios;*/
+
+function choice(cID) {
+
+}
 
 function newCard(sID) {
+    var cardElem = document.getElementById("card");
+
+    var newCardElem = cardElem.cloneNode(true);
+    cardElem.parentNode.append(newCardElem);
+    cardElem.remove();
+
     var infoElem = document.getElementById("cardInfo");
     var choiceElem = document.getElementById("cardChoices");
+
+    infoElem.innerHTML = `<p>${scenarios[sID].text}</p>`;
 }
 
 function changeStats(changes = []) {
@@ -39,3 +66,4 @@ function changeStats(changes = []) {
         }
     }
 }
+
