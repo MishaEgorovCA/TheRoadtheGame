@@ -3,7 +3,7 @@ var health = 50;
 var sanity = 50;
 
 var score = 0;
-var daySurvived = 0;    
+var daysSurvived = 0;    
 
 var currentScenario = 0;
 
@@ -30,12 +30,13 @@ function choice(cID) {
     if (hunger <= 0) { endGame("you loose because you starved to death"); }
     else if (hunger >= 100) { endGame("you loose because you got too damn fat"); }
     else if (health <= 0) { endGame("you loose because you got too sick"); }
-    else if (health >= 100) { endGame("you loose because you were too healthy????? maybe some bad guys see your good health and eat your fresh meat up? idk"); }
+    else if (health >= 100) { endGame("you loose because you overworked yourself."); }
     else if (sanity <= 0) { endGame("you loose because you went insane"); }
     else if (sanity >= 100) { endGame("you loose because you fall into a state of bliss and stop caring about survival believing everything is great, and die"); }
     else {
 
-        //increment days and score
+        daysSurvived += Math.floor(Math.random() * 5 + 2);
+        score += 100;
 
         var index = 0;
         if (!scenarios[currentScenario].repeatable) {//if non-repeatable or story remove from available
@@ -57,11 +58,12 @@ function choice(cID) {
 
         if (scenarios[currentScenario].choices[cID].chained) { //If chained next scenario is the chained one else
             currentScenario = scenarios[currentScenario].choices[cID].chained;
-        } else if (randomCount === 0 || randomCount >= 4 || Math.random() > 0.2) { //chance of getting another random event or story
+        } else if ((randomCount === 0 || Math.random() > 0.2) && randomCount <= 4) { //chance of getting another random event or story
             currentScenario = availableRandomEvents[Math.floor(Math.random() * availableRandomEvents.length)];
             randomCount++;
         } else {
-            currentScenario = availableStoryEvents[0];
+            if (availableStoryEvents.length === 0) { alert("ERROR: OUT OF STORY EVENTS");}
+            currentScenario = availableStoryEvents[0]; 
             randomCount = 0;
         }
 
@@ -94,7 +96,13 @@ function newCard(sID,custom) {
     } else {
         scenario = scenarios[sID];
     }
-    
+
+    var scoreElem = document.getElementById("score");
+    var daysElem = document.getElementById("daysSurvived");
+
+    scoreElem.innerHTML = score; //Show score
+    daysElem.innerHTML = daysSurvived;
+
     var cardElem = document.getElementById("card");
 
     var newCardElem = cardElem.cloneNode(true);
