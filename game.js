@@ -2,23 +2,29 @@ var hunger = 50;
 var health = 50;
 var sanity = 50;
 
+var score = 0;
+var daySurvived = 0;    
+
 var currentScenario = 0;
 
 var scenarios = JSON.parse(rawData).scenarios;
 
 var availableRandomEvents = [];
-var storyEvents = [];
+var availableStoryEvents = [];
+
+var randomCount = 0;
 
 scenarios.forEach((scene,i)=>{
 if (scene.story) {
-    storyEvents.push(i);
+    availableStoryEvents.push(i);
 } else if (!scene.locked){
     availableRandomEvents.push(i);
 }
-
 });
 
 function choice(cID) {
+    var lastScenario = currentScenario;
+    
     changeStats(scenarios[currentScenario].choices[cID].affects);
 
     if (hunger <= 0) { endGame("you loose because you starved to death"); }
@@ -29,9 +35,44 @@ function choice(cID) {
     else if (sanity >= 100) { endGame("you loose because you fall into a state of bliss and stop caring about survival believing everything is great, and die"); }
     else {
 
+        //increment days and score
 
-        newCard(currentScenario + 1);
-        currentScenario++;
+        var index = 0;
+        if (!scenarios[currentScenario].repeatable) {//if non-repeatable or story remove from available
+            if (scenarios[currentScenario].story) {
+                index = availableStoryEvents.indexOf(currentScenario);
+                if (index !== -1) availableStoryEvents.splice(index, 1);
+            } else {
+                index = availableRandomEvents.indexOf(currentScenario);
+                if (index !== -1) availableRandomEvents.splice(index, 1);
+            }
+        }
+
+        if (scenarios[currentScenario].choices[cID].locks) {//if contains events to lock, make them unavailable !! Did not make to work with locking story events !!
+            scenarios[currentScenario].choices[cID].locks.forEach((lockID) => {
+                index = availableRandomEvents.indexOf(lockID);
+                if (index !== -1) availableRandomEvents.splice(index, 1);
+            });
+        }
+
+        if (scenarios[currentScenario].choices[cID].chained) { //If chained next scenario is the chained one else
+            currentScenario = scenarios[currentScenario].choices[cID].chained;
+        } else if (randomCount === 0 || randomCount >= 4 || Math.random() > 0.2) { //chance of getting another random event or story
+            currentScenario = availableRandomEvents[Math.floor(Math.random() * availableRandomEvents.length)];
+            randomCount++;
+        } else {
+            currentScenario = availableStoryEvents[0];
+            randomCount = 0;
+        }
+
+        if (scenarios[lastScenario].choices[cID].unlocks) {//if contains events to unlock, make them available !! Did not make to work with unnlocking story events !!
+            scenarios[lastScenario].choices[cID].unlocks.forEach((unlockID) => {
+                if (!availableRandomEvents.includes(unlockID)) {
+                    availableRandomEvents.push(unlockID);
+                }
+            });
+        }
+        newCard(currentScenario);
     }
 }
 
