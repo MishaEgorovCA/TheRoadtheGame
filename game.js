@@ -67,7 +67,7 @@ function choice(cID) {
             randomCount = 0;
         }
 
-        if (scenarios[lastScenario].choices[cID].unlocks) {//if contains events to unlock, make them available !! Did not make to work with unnlocking story events !!
+        if (scenarios[lastScenario].choices[cID].unlocks) {//if contains events to unlock, make them available !! Did not make to work with unlocking story events !!
             scenarios[lastScenario].choices[cID].unlocks.forEach((unlockID) => {
                 if (!availableRandomEvents.includes(unlockID)) {
                     availableRandomEvents.push(unlockID);
@@ -80,7 +80,7 @@ function choice(cID) {
 
 function endGame(reason) {
     document.getElementById("card").remove();
-    document.getElementById("body").style.backgroundImage = "url('resources/tenor.gif')";
+    document.getElementById("body").style.backgroundImage = "url('resources/graphics/fortnite.gif')";
     setTimeout(endScreen,2500);
     function endScreen() {
         alert(reason);
