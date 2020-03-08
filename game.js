@@ -2,37 +2,61 @@ var hunger = 50;
 var health = 50;
 var sanity = 50;
 
+var animating = false;
+
 var score = 0;
 var daysSurvived = 0;    
 
 var currentScenario = 0;
+var lastScenario;
 
 var scenarios = JSON.parse(rawData).scenarios;
 
 var availableRandomEvents = [];
 var availableStoryEvents = [];
 
-var randomCount = 0;
-
-scenarios.forEach((scene,i)=>{
-if (scene.story) {
-    availableStoryEvents.push(i);
-} else if (!scene.locked){
-    availableRandomEvents.push(i);
-}
+scenarios.forEach((scene, i) => {
+    if (scene.story) {
+        availableStoryEvents.push(i);
+    } else if (!scene.locked) {
+        availableRandomEvents.push(i);
+    }
 });
 
+var randomCount = 0;
+
+var playerName = "";
+
+var attempt = 1;
+
+var deathTemplate = {
+    text: "ERROR: TEXT NOT SET",
+    image: "",
+    choices: [
+        {
+            "text": "View Leaderboard",
+            "chained": "leaderboard"
+        },
+        {
+            "text": "Restart",
+            "chained": "restart"
+        }
+    ]
+};
+
 function choice(cID) {
-    var lastScenario = currentScenario;
+    if (animating) return;
+    if (lastScenario === currentScenario) { alert('ERROR: SAME EVENT TWICE IN A ROW'); return; }
+    lastScenario = currentScenario;
     
     changeStats(scenarios[currentScenario].choices[cID].affects);
 
-    if (hunger <= 0) { endGame("you loose because you starved to death"); }
-    else if (hunger >= 100) { endGame("you loose because you got too damn fat"); }
-    else if (health <= 0) { endGame("you loose because you got too sick"); }
-    else if (health >= 100) { endGame("you loose because you overworked yourself."); }
-    else if (sanity <= 0) { endGame("you loose because you went insane"); }
-    else if (sanity >= 100) { endGame("you loose because you fall into a state of bliss and stop caring about survival believing everything is great, and die"); }
+    if (hunger <= 0) { endGame("You have starved to death."); }
+    else if (hunger >= 100) { endGame("You and your son have grown fat with your plentiful food which forced your efforts to a halt. Some bad guys going the same direction as you catch up and decide your fat selves would make a wonderful dinner meal."); }
+    else if (health <= 0) { endGame("You become very sick. The coughing gets the best of you. You have died."); }
+    else if (health >= 100) { endGame("You feel great just like the days before the apocalypse. You feel as though you have no limits. You push yourself, almost running down the road with your cart, but you overwork yourself and die."); }
+    else if (sanity <= 0) { endGame("Your sanity drains. You question your choices. Did you do what is morally right? Are you the bad guy? In fear of becoming the bad guy, you suicide."); }
+    else if (sanity >= 100) { endGame("You fall into a state of bliss and stop caring about survival believing everything is great. This leads you to run into some bad guys, thinking they would help, but you’ve only provided them with a nice dinner meal. You have died."); }
     else {
 
         daysSurvived += Math.floor(Math.random() * 5 + 2);
@@ -59,7 +83,13 @@ function choice(cID) {
         if (scenarios[currentScenario].choices[cID].chained) { //If chained next scenario is the chained one else
             currentScenario = scenarios[currentScenario].choices[cID].chained;
         } else if ((randomCount === 0 || Math.random() > 0.2) && randomCount <= 4) { //chance of getting another random event or story
-            currentScenario = availableRandomEvents[Math.floor(Math.random() * availableRandomEvents.length)];
+            if (availableRandomEvents.length <= 1) { alert("ERROR: OUT OF RANDOM EVENTS"); }
+
+            var events = availableRandomEvents;
+            index = events.indexOf(currentScenario);//remove current event so it doesnt repeat
+            if (index !== -1) events.splice(index, 1);
+
+            currentScenario = events[Math.floor(Math.random() * events.length)];
             randomCount++;
         } else {
             if (availableStoryEvents.length === 0) { alert("ERROR: OUT OF STORY EVENTS");}
@@ -78,16 +108,56 @@ function choice(cID) {
     }
 }
 
-function endGame(reason) {
-    document.getElementById("card").remove();
-    document.getElementById("body").style.backgroundImage = "url('resources/graphics/fortnite.gif')";
+function endGame(deathMessage,image) {
+    document.getElementById("card").style.visibility = "hidden";
     setTimeout(endScreen,2500);
     function endScreen() {
-        alert(reason);
-        location.reload();
+        document.getElementById("body").style.backgroundImage = "url('resources/graphics/fortnite.gif')";
+        var deathCard = deathTemplate;
+        deathCard.text = `${deathMessage}<br/><br/><br/>You survived a total of <span class="w3-xlarge">${daysSurvived}</span> days.<br/>Your score is <span class="w3-xlarge">${score}</span>`;
+        if (image) { deathCard.image = image; }
+        newCard(0, deathCard);
     }
 }
 
+function leaderboard() {
+    alert("Leaderboard under construction still");
+}
+
+function restart() {
+    document.getElementById("body").style.backgroundImage = "none";
+
+    hunger = 50;
+    health = 50;
+    sanity = 50;
+
+    document.getElementById("hunger").style.width = `50%`;
+    document.getElementById("health").style.width = `50%`;
+    document.getElementById("sanity").style.width = `50%`;
+
+    score = 0;
+    daysSurvived = 0;
+
+    currentScenario = 0;
+    lastScenario = -1;
+
+    availableRandomEvents = [];
+    availableStoryEvents = [];
+
+    scenarios.forEach((scene, i) => {
+        if (scene.story) {
+            availableStoryEvents.push(i);
+        } else if (!scene.locked) {
+            availableRandomEvents.push(i);
+        }
+    });
+
+    randomCount = 0;
+
+    attempt++;
+
+    newCard(0);
+}
 
 function newCard(sID,custom) {
     var scenario;
@@ -104,6 +174,7 @@ function newCard(sID,custom) {
     daysElem.innerHTML = daysSurvived;
 
     var cardElem = document.getElementById("card");
+    cardElem.style.visibility = "hidden";
 
     var newCardElem = cardElem.cloneNode(true);
     cardElem.parentNode.append(newCardElem);
@@ -121,10 +192,11 @@ function newCard(sID,custom) {
     choiceElem.innerHTML = "";
     scenario.choices.forEach((choice, i) => {
         choiceElem.innerHTML += `
-            <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="choice(${i});">
+            <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="${custom ? `${choice.chained}()` : `choice(${i});`}">
             ${choice.text}
             </p>`;
     });
+    newCardElem.style.visibility = "visible";
 }
 
 function changeStats(changes = []) {
@@ -138,6 +210,7 @@ function changeStats(changes = []) {
 
     elems = [document.getElementById("hunger"), document.getElementById("health"), document.getElementById("sanity")];
 
+    animating = true;
     var interval = setInterval(frame, 25);
     function frame() {
             var done = 0;
@@ -153,6 +226,7 @@ function changeStats(changes = []) {
             });
             if (done === 3) {
                 clearInterval(interval);
+                animating = false;
             }
     }
 }

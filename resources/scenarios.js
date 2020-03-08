@@ -73,7 +73,7 @@ const rawData = `
           "chained": false
         },
         {
-          "text": "+100 +100 -100",
+          "text": "+100 +100 +100",
           "affects": [ 100, 100, 100 ],
           "unlocks": false,
           "locks": false,
@@ -181,7 +181,7 @@ const rawData = `
           "affects": [ 3, 3, 3 ],
           "unlocks": [ 6, 7 ],
           "locks": [ 0, 1, 2, 3, 4, 5, 8 ],
-          "chained": false
+          "chained": [6]
         }
       ],
       "repeatable": false,

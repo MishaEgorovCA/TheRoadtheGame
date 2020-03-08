@@ -180,7 +180,7 @@
           "affects": [ 3, 3, 3 ],
           "unlocks": [ 6, 7 ],
           "locks": [ 0, 1, 2, 3, 4, 5, 8 ],
-          "chained": false
+          "chained": [6]
         }
       ],
       "repeatable": false,

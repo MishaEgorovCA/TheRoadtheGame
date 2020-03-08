@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body class="w3-gray" id="body">
+<body class="w3-gray" id="body" onload="document.getElementById('tutorial').style.display = 'block';">
     <div class="w3-container w3-dark-gray w3-text-white"><h1>The Road the Game</h1></div>
     <div class="w3-display-container">
         <!--Days Survived-->
@@ -43,6 +43,7 @@
         <!--Credit-->
         <div class="w3-display-bottomright w3-margin-right w3-text-light-gray w3-small" style="text-shadow:1px 1px 0 #444">A collaboration between:<br /><span class="w3-small">Kentaro, Misha, Ariel</span></div>
 
+        <div class="w3-button w3-display-bottomleft w3-margin-left" style="text-shadow: 1px 1px 0 #444" onclick="document.getElementById('tutorial').style.display = 'block';">Tutorial</div>
         <!--Main Game Info-->
         <!--Player Stats-->
         <div class="w3-row w3-light-gray w3-center" style="height:120px;margin:auto;width:580px;">
@@ -73,7 +74,7 @@
             </div>
 
             <!--Choices-->
-            <footer class="w3-light-gray" style="height:300px" id="cardChoices">
+            <footer class="w3-light-gray" style="height:300px;" id="cardChoices">
 
                 <p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="choice(0);">
                     Pet the dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
@@ -100,19 +101,24 @@
         </div>
     </div>
 
-    <!--Loose-->
+    <!--Tutorial-->
     <!--<p class="w3-btn w3-margin-top w3-left-align w3-ripple w3-block" onclick="document.getElementById('id02').style.display='block'">
         Feed the dog
     </p>-->
-    <div id="loose" class="w3-modal">
+    <div id="tutorial" class="w3-modal">
         <div class="w3-modal-content">
             <div class="w3-container">
-                <p>You have died of ____</p>
-                <p>You survived ____ days and reached a score of ____.</p>
+                <h2>Tutorial</h2>
+                <p>This game is based on the mobile game "Reigns"</p>
+                <p>The goal of the game is to survive as long as you can.</p>
+                <p>To survive you must balance your hunger, health, and sanity.</p>
+                <p>You will be met with scenarios and must make a choice in each.</p>
+                <p>The choices you make will affect your stats. Don't let them fall to zero!</p>
+                <p>Even having too much of a stat may be detrimental, so try to balance your stats.</p>
             </div>
-            <span onclick="document.getElementById('loose').style.display='none'" class="w3-button" style="text-align:center;width:100%">View Leaderboard</span>
+            <span onclick="document.getElementById('tutorial').style.display='none'" class="w3-button" style="text-align: center; width: 100%">Continue</span>
         </div>
-    </div>
+    </div>  
 
     <script type="text/javascript" src="resources/scenarios.js"></script>
     <script type="text/javascript" src="game.js"></script>
