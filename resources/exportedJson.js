@@ -433,7 +433,7 @@ rawJson = `{
     {
         "choices": "Take the arrow out and operate on the wound",
         "customDeath": "Your lack of experience with medical practices caused the wound to become infected and you die.",
-        "effectsHungerHealthSanity": "[[0 5, 0],[ 0, -100, 0]]"
+        "effectsHungerHealthSanity": "[[0, 5, 0],[ 0, -100, 0]]"
     },
     {
         "id": 31,

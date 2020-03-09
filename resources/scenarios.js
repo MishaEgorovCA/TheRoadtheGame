@@ -7,7 +7,8 @@ const rawData = `
       "choices": [
         {
           "text": "Begin",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -23,7 +24,8 @@ const rawData = `
       "choices": [
         {
           "text": "Leave your cart in the lot and enter the store",
-          "affects": [ 5, -10, -10 ],
+          "customDeath": false,
+          "affects": [5, -10, -10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -32,7 +34,8 @@ const rawData = `
         },
         {
           "text": "Leave the store behind and continue on your journey",
-          "affects": [ -5, 0, 10 ],
+          "customDeath": false,
+          "affects": [-5, 0, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -48,14 +51,16 @@ const rawData = `
       "choices": [
         {
           "text": "Give the can of coca cola to the son",
-          "affects": [ 10, 10, 20 ],
+          "customDeath": false,
+          "affects": [10, 10, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Drink it yourself",
-          "affects": [ 10, -10, 20 ],
+          "customDeath": false,
+          "affects": [10, -10, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -71,7 +76,8 @@ const rawData = `
       "choices": [
         {
           "text": "Approach her and lift the veil",
-          "affects": [ 0, 10, -10 ],
+          "customDeath": false,
+          "affects": [0, 10, -10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -80,7 +86,8 @@ const rawData = `
         },
         {
           "text": "Remain still",
-          "affects": [ 0, 10, 10 ],
+          "customDeath": false,
+          "affects": [0, 10, 10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -98,7 +105,8 @@ const rawData = `
       "choices": [
         {
           "text": "You wish you were still with her",
-          "affects": [ 0, -10, -10 ],
+          "customDeath": false,
+          "affects": [0, -10, -10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -107,7 +115,8 @@ const rawData = `
         },
         {
           "text": "Now you must care for your son",
-          "affects": [ 0, -10, 10 ],
+          "customDeath": false,
+          "affects": [0, -10, 10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -125,14 +134,16 @@ const rawData = `
       "choices": [
         {
           "text": "Hold the picture to your chest ",
-          "affects": [ 0, 0, -100 ],
+          "customDeath": "You cannot live without her. You die with her picture in hand.",
+          "affects": [0, 0, -100],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Leave the photo on the road",
-          "affects": [ 0, 0, 10 ],
+          "customDeath": false,
+          "affects": [0, 0, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -148,14 +159,16 @@ const rawData = `
       "choices": [
         {
           "text": "Run away as fast as you can. Leave the cart as it is not as valuable as your son’s life.",
-          "affects": [ -100, -100, -100 ],
+          "customDeath": false,
+          "affects": [-100, -100, -100],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Hide and wait. ",
-          "affects": [ -10, 0, 0 ],
+          "customDeath": false,
+          "affects": [-10, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -173,7 +186,8 @@ const rawData = `
       "choices": [
         {
           "text": "Gesture him to come towards you while locking your pistol onto his head.",
-          "affects": [ 0, 0, -10 ],
+          "customDeath": false,
+          "affects": [0, 0, -10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -182,7 +196,8 @@ const rawData = `
         },
         {
           "text": "Run away with your son as you have already been spotted",
-          "affects": [ -100, -100, 0 ],
+          "customDeath": "He shouts to the others and they hunt you down for a nice dinner meal.",
+          "affects": [-100, -100, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -198,14 +213,16 @@ const rawData = `
       "choices": [
         {
           "text": "Believe him and go to the truck with your son",
-          "affects": [ 0, -100, -100 ],
+          "customDeath": "As soon as you get there they grab you and your son and kill you for a nice dinner meal.",
+          "affects": [0, -100, -100],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Don’t believe him and attempt to take the man up the road. This way, you can turn him loose and escape with a head start.",
-          "affects": [ 0, 0, 20 ],
+          "customDeath": false,
+          "affects": [0, 0, 20],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -223,7 +240,8 @@ const rawData = `
       "choices": [
         {
           "text": "Shoot him.",
-          "affects": [ 0, 0, -30 ],
+          "customDeath": false,
+          "affects": [0, 0, -30],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -232,7 +250,8 @@ const rawData = `
         },
         {
           "text": "Don’t waste a bullet. You can take him on with your fists.",
-          "affects": [ 0, -100 ],
+          "customDeath": "He ends up overpowering you, killing you. What were you thinking, using fists in a knife fight?!",
+          "affects": [0, -100],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -248,14 +267,16 @@ const rawData = `
       "choices": [
         {
           "text": "I must keep the boy alive.I need to run faster.",
-          "affects": [ 0, -10, 20 ],
+          "customDeath": false,
+          "affects": [0, -10, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "I’m tired. I don’t think I can carry the boy any faster.",
-          "affects": [ 0, 0, -20 ],
+          "customDeath": false,
+          "affects": [0, 0, -20],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -271,7 +292,8 @@ const rawData = `
       "choices": [
         {
           "text": "Risk it and go in for shelter",
-          "affects": [ 0, 0, -5 ],
+          "customDeath": false,
+          "affects": [0, 0, -5],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -280,7 +302,8 @@ const rawData = `
         },
         {
           "text": "Leave it. People might live there.",
-          "affects": [ -10, 0, 0 ],
+          "customDeath": false,
+          "affects": [-10, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -296,7 +319,8 @@ const rawData = `
       "choices": [
         {
           "text": "Open the door",
-          "affects": [ 0, 0, -5 ],
+          "customDeath": false,
+          "affects": [0, 0, -5],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -305,7 +329,8 @@ const rawData = `
         },
         {
           "text": "Leave the home",
-          "affects": [ 0, -10, 0 ],
+          "customDeath": false,
+          "affects": [0, -10, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -321,7 +346,8 @@ const rawData = `
       "choices": [
         {
           "text": "Use your light to go in and explore",
-          "affects": [ 0, 0, -5 ],
+          "customDeath": false,
+          "affects": [0, 0, -5],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -330,7 +356,8 @@ const rawData = `
         },
         {
           "text": "Close the door and avoid the darkness",
-          "affects": [ 0, -10, 0 ],
+          "customDeath": false,
+          "affects": [0, -10, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -346,7 +373,8 @@ const rawData = `
       "choices": [
         {
           "text": "Shine the light on them",
-          "affects": [ 0, 0, -5 ],
+          "customDeath": false,
+          "affects": [0, 0, -5],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -355,7 +383,8 @@ const rawData = `
         },
         {
           "text": "Avoid them. It could mean trouble",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -371,21 +400,24 @@ const rawData = `
       "choices": [
         {
           "text": "Eat them as well. Food will sate the hunger",
-          "affects": [ 20, 5, -45 ],
+          "customDeath": false,
+          "affects": [20, 5, -45],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Free them. It is the moral thing to do.",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
-          "chained": [ 16, 17, 18 ]
+          "chained": [16, 17, 18]
         },
         {
           "text": "Leave them be. Its the survivor move.",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -401,7 +433,8 @@ const rawData = `
       "choices": [
         {
           "text": "Oh no.",
-          "affects": [ 0, -100, 0 ],
+          "customDeath": "The cannibals made a nice dinner out of you.",
+          "affects": [0, -100, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -417,7 +450,8 @@ const rawData = `
       "choices": [
         {
           "text": "Oh no.",
-          "affects": [ 0, -100, 0 ],
+          "customDeath": "The prisoners made a nice dinner out of you.",
+          "affects": [0, -100, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -433,7 +467,8 @@ const rawData = `
       "choices": [
         {
           "text": "YES",
-          "affects": [ 5, 5, 25 ],
+          "customDeath": false,
+          "affects": [5, 5, 25],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -449,13 +484,15 @@ const rawData = `
       "choices": [
         {
           "text": "Leave it. You do not know what could be in there",
-          "affects": [ -5, 0, 5 ],
+          "customDeath": false,
+          "affects": [-5, 0, 5],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Explore it. Maybe it will help.",
+          "customDeath": false,
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -473,14 +510,16 @@ const rawData = `
       "choices": [
         {
           "text": "Take a risk and stay the night for safe shelter.",
-          "affects": [ 10, 10, -5 ],
+          "customDeath": false,
+          "affects": [10, 10, -5],
           "unlocks": false,
           "locks": false,
-          "chained": [ 22, 21 ]
+          "chained": [22, 21]
         },
         {
           "text": "Run and hide. The person who stocked this bunker hid it for a reason",
-          "affects": [ -10, -10, 5 ],
+          "customDeath": false,
+          "affects": [-10, -10, 5],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -496,7 +535,8 @@ const rawData = `
       "choices": [
         {
           "text": "Oh no.",
-          "affects": [ 0, -100, 0 ],
+          "customDeath": "The cannibals made a nice dinner out of you.",
+          "affects": [0, -100, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -512,14 +552,16 @@ const rawData = `
       "choices": [
         {
           "text": "Risk another night ",
-          "affects": [ 5, 5, -5 ],
+          "customDeath": false,
+          "affects": [5, 5, -5],
           "unlocks": false,
           "locks": false,
-          "chained": [ 22, 21 ]
+          "chained": [22, 21]
         },
         {
           "text": "Leave and give up the shelter and food source. The owner of the bunker could come back.",
-          "affects": [ -5, 0, 5 ],
+          "customDeath": false,
+          "affects": [-5, 0, 5],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -535,20 +577,23 @@ const rawData = `
       "choices": [
         {
           "text": "Steal from him",
-          "affects": [ 5, 0, -10 ],
+          "customDeath": false,
+          "affects": [5, 0, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Hide from him",
+          "customDeath": false,
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Offer to help him",
-          "affects": [ -5, 0, 10 ],
+          "customDeath": false,
+          "affects": [-5, 0, 10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -566,14 +611,16 @@ const rawData = `
       "choices": [
         {
           "text": "Hopelessly agree with the man that God is gone ",
-          "affects": [ 0, 0, -10 ],
+          "customDeath": false,
+          "affects": [0, 0, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Argue with the man that God is still watching over you",
-          "affects": [ 0, 0, 10 ],
+          "customDeath": false,
+          "affects": [0, 0, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -589,7 +636,8 @@ const rawData = `
       "choices": [
         {
           "text": "Explore the beach, maybe you will find something ",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -598,7 +646,8 @@ const rawData = `
         },
         {
           "text": "Avoid the beach. Tides and quicksand could be very dangerous.",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -614,7 +663,8 @@ const rawData = `
       "choices": [
         {
           "text": "Investigate it",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -623,7 +673,8 @@ const rawData = `
         },
         {
           "text": "Leave it alone",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -639,14 +690,16 @@ const rawData = `
       "choices": [
         {
           "text": "Take the food and go find shelter",
-          "affects": [ 10, 0, 0 ],
+          "customDeath": false,
+          "affects": [10, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Stay a night on the ship",
-          "affects": [ 10, 10, 10 ],
+          "customDeath": false,
+          "affects": [10, 10, 10],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -664,14 +717,16 @@ const rawData = `
       "choices": [
         {
           "text": "Make the necessary repairs and sail to the seas. The ocean has less cannibals than the road.",
-          "affects": [ 0, -100, 0 ],
+          "customDeath": "Your lack of experience in sailing causes the ship to capsize, drowning you at the bottom of the sea.",
+          "affects": [0, -100, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Leave the ship alone. You do not want to tempt fate.",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -687,7 +742,8 @@ const rawData = `
       "choices": [
         {
           "text": "Quickly retaliate with whatever weapon you have in your possession",
-          "affects": [ 0, -10, 0 ],
+          "customDeath": false,
+          "affects": [0, -10, 0],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -696,7 +752,8 @@ const rawData = `
         },
         {
           "text": "Withdraw and run away",
-          "affects": [ 0, 0, 0 ],
+          "customDeath": false,
+          "affects": [0, 0, 0],
           "unlocks": false,
           "locks": false,
           "chained": [
@@ -714,17 +771,16 @@ const rawData = `
       "choices": [
         {
           "text": "Keep the arrow in, you can handle it",
-          "affects": [ 0, -100, 0 ],
+          "customDeath": "Nope. Turns out you can't handle it. You die from the arrow.",
+          "affects": [0, -100, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Take the arrow out and operate on the wound",
-          "affects": [
-            [ 0, 5, 0 ],
-            [ 0, -100, 0 ]
-          ],
+          "customDeath": "Your lack of experience with medical practices caused the wound to become infected and you die.",
+          "affects": [[0, 5, 0],[ 0, -100, 0]],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -740,14 +796,16 @@ const rawData = `
       "choices": [
         {
           "text": "Find some tools and being working on the wheel.",
-          "affects": [ -20, 0, 20 ],
+          "customDeath": false,
+          "affects": [-20, 0, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Continue on without fixing the wheel.",
-          "affects": [ 10, -20, -20 ],
+          "customDeath": false,
+          "affects": [10, -20, -20],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -763,17 +821,16 @@ const rawData = `
       "choices": [
         {
           "text": "Grab it and begin feasting with your son.",
-          "affects": [
-            [ 30, 20, 30 ],
-            [ -30, -20, -30 ]
-          ],
+          "customDeath": false,
+          "affects": [[30, 20, 30],[-30, -20, -30]],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Study it and put it back. No way the ham is still good.",
-          "affects": [ -10, -10, -10 ],
+          "customDeath": false,
+          "affects": [-10, -10, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -789,14 +846,16 @@ const rawData = `
       "choices": [
         {
           "text": "Tell him that it is too far and that the view from here is good enough.",
-          "affects": [ 20, 10, -10 ],
+          "customDeath": false,
+          "affects": [20, 10, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Listen to your son and make your way down the hill to take a closer look at the dam.",
-          "affects": [ -20, -20, 20 ],
+          "customDeath": false,
+          "affects": [-20, -20, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -812,17 +871,16 @@ const rawData = `
       "choices": [
         {
           "text": "Home canned tomatoes are not trustworthy.",
-          "affects": [ -20, 10, -10 ],
+          "customDeath": false,
+          "affects": [-20, 10, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Food is food. You have to take advantage of what you find.",
-          "affects": [
-            [ 20, 30, 20 ],
-            [ -20, -30, -20 ]
-          ],
+          "customDeath": false,
+          "affects": [[20, 30, 20],[-20, -30, -20]],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -838,14 +896,16 @@ const rawData = `
       "choices": [
         {
           "text": "Hug your son and tell him that it’s alright.",
-          "affects": [ 0, -10, 30 ],
+          "customDeath": false,
+          "affects": [0, -10, 30],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Ignore the noises that the earthquake and your son are making. Go back to sleep. It’s more important.",
-          "affects": [ 0, 10, -30 ],
+          "customDeath": false,
+          "affects": [0, 10, -30],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -861,14 +921,16 @@ const rawData = `
       "choices": [
         {
           "text": "Ponder into deep thoughts as you stare at the fire.",
-          "affects": [ -10, -20, 20 ],
+          "customDeath": false,
+          "affects": [-10, -20, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Remove yourself from the trance and continue on the road.",
-          "affects": [ 10, 10, 0 ],
+          "customDeath": false,
+          "affects": [10, 10, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -884,14 +946,16 @@ const rawData = `
       "choices": [
         {
           "text": "Divide the hot cocoa between you and your son.",
-          "affects": [ 10, 10, 10 ],
+          "customDeath": false,
+          "affects": [10, 10, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Give it all to your son.",
-          "affects": [ -10, -10, -10 ],
+          "customDeath": false,
+          "affects": [-10, -10, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -907,14 +971,16 @@ const rawData = `
       "choices": [
         {
           "text": "Backtrack and wait for the macadam to cool before trudging on.",
-          "affects": [ 10, 20, 0 ],
+          "customDeath": false,
+          "affects": [10, 20, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Don’t lose hope! Continue to walk through the sticky substance in order to maintain good time.",
-          "affects": [ -10, -20, 0 ],
+          "customDeath": false,
+          "affects": [-10, -20, 0],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -930,14 +996,16 @@ const rawData = `
       "choices": [
         {
           "text": "You are one of the good guys! Help the man in need.",
-          "affects": [ -20, -20, 20 ],
+          "customDeath": false,
+          "affects": [-20, -20, 20],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Your son is the number one priority.",
-          "affects": [ 10, 10, -20 ],
+          "customDeath": false,
+          "affects": [10, 10, -20],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -953,14 +1021,16 @@ const rawData = `
       "choices": [
         {
           "text": "Cards are a waste of time and you need to continue looting houses.",
-          "affects": [ 10, 10, -30 ],
+          "customDeath": false,
+          "affects": [10, 10, -30],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Spending valuable time with your son is important.",
-          "affects": [ -10, -10, 30 ],
+          "customDeath": false,
+          "affects": [-10, -10, 30],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -976,14 +1046,16 @@ const rawData = `
       "choices": [
         {
           "text": "A fire is necessary for the boy’s survival and so waking him up won’t be a big deal.",
-          "affects": [ 0, 10, -10 ],
+          "customDeath": false,
+          "affects": [0, 10, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Waking him up would ruin his sleep.",
-          "affects": [ 0, -10, 10 ],
+          "customDeath": false,
+          "affects": [0, -10, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -999,14 +1071,16 @@ const rawData = `
       "choices": [
         {
           "text": "Go the extra mile, literally. Walk around in circles to confuse them.",
-          "affects": [ -10, -10, 10 ],
+          "customDeath": false,
+          "affects": [-10, -10, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "They won’t be able to find the tracks anyways.Save your stamina.",
-          "affects": [ 10, 10, -10 ],
+          "customDeath": false,
+          "affects": [10, 10, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -1022,28 +1096,32 @@ const rawData = `
       "choices": [
         {
           "text": "Pet the dog an let it go.",
-          "affects": [ 0, -5, 10 ],
+          "customDeath": false,
+          "affects": [0, -5, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Leave the dog alone.",
-          "affects": [ 0, 0, -10 ],
+          "customDeath": false,
+          "affects": [0, 0, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Give the dog some food.",
-          "affects": [ -20, 0, 10 ],
+          "customDeath": false,
+          "affects": [-20, 0, 10],
           "unlocks": false,
           "locks": false,
           "chained": false
         },
         {
           "text": "Keep the dog.",
-          "affects": [ -20, -5, 30 ],
+          "customDeath": false,
+          "affects": [-20, -5, 30],
           "unlocks": [
             44
           ],
@@ -1054,7 +1132,8 @@ const rawData = `
         },
         {
           "text": "Eat the dog.",
-          "affects": [ 50, 0, -10 ],
+          "customDeath": false,
+          "affects": [50, 0, -10],
           "unlocks": false,
           "locks": false,
           "chained": false
@@ -1070,7 +1149,8 @@ const rawData = `
       "choices": [
         {
           "text": "Eat the dog.",
-          "affects": [ 50, 0, -20 ],
+          "customDeath": false,
+          "affects": [50, 0, -20],
           "unlocks": [
             43
           ],
@@ -1081,7 +1161,8 @@ const rawData = `
         },
         {
           "text": "Keep going.",
-          "affects": [ -20, 0, 10 ],
+          "customDeath": false,
+          "affects": [-20, 0, 10],
           "unlocks": false,
           "locks": false,
           "chained": false

@@ -51,12 +51,16 @@ function choice(cID) {
     
     changeStats(scenarios[currentScenario].choices[cID].affects);
 
-    if (hunger <= 0) { endGame("You have starved to death."); }
-    else if (hunger >= 100) { endGame("You and your son have grown fat with your plentiful food which forced your efforts to a halt. Some bad guys going the same direction as you catch up and decide your fat selves would make a wonderful dinner meal."); }
-    else if (health <= 0) { endGame("You become very sick. The coughing gets the best of you. You have died."); }
-    else if (health >= 100) { endGame("You feel great just like the days before the apocalypse. You feel as though you have no limits. You push yourself, almost running down the road with your cart, but you overwork yourself and die."); }
-    else if (sanity <= 0) { endGame("Your sanity drains. You question your choices. Did you do what is morally right? Are you the bad guy? In fear of becoming the bad guy, you suicide."); }
-    else if (sanity >= 100) { endGame("You fall into a state of bliss and stop caring about survival believing everything is great. This leads you to run into some bad guys, thinking they would help, but you’ve only provided them with a nice dinner meal. You have died."); }
+    if (scenarios[currentScenario].choices[cID].customDeath) {
+        var customDeathMessage = scenarios[currentScenario].choices[cID].customDeath;
+    }
+
+    if (hunger <= 0) { endGame(customDeathMessage ? customDeathMessage : "You have starved to death."); }
+    else if (hunger >= 100) { endGame(customDeathMessage ? customDeathMessage : "You and your son have grown fat with your plentiful food which forced your efforts to a halt. Some bad guys going the same direction as you catch up and decide your fat selves would make a wonderful dinner meal."); }
+    else if (health <= 0) { endGame(customDeathMessage ? customDeathMessage : "You become very sick. The coughing gets the best of you. You have died."); }
+    else if (health >= 100) { endGame(customDeathMessage ? customDeathMessage : "You feel great just like the days before the apocalypse. You feel as though you have no limits. You push yourself, almost running down the road with your cart, but you overwork yourself and die."); }
+    else if (sanity <= 0) { endGame(customDeathMessage ? customDeathMessage : "Your sanity drains. You question your choices. Did you do what is morally right? Are you the bad guy? In fear of becoming the bad guy, you suicide."); }
+    else if (sanity >= 100) { endGame(customDeathMessage ? customDeathMessage : "You fall into a state of bliss and stop caring about survival believing everything is great. This leads you to run into some bad guys, thinking they would help, but you’ve only provided them with a nice dinner meal. You have died."); }
     else {
 
         daysSurvived += Math.floor(Math.random() * 5 + 2);
@@ -110,7 +114,8 @@ function choice(cID) {
 
 function endGame(deathMessage,image) {
     document.getElementById("card").style.visibility = "hidden";
-    setTimeout(endScreen,2500);
+    setTimeout(endScreen, 2500);
+
     function endScreen() {
         document.getElementById("body").style.backgroundImage = "url('resources/graphics/fortnite.gif')";
         var deathCard = deathTemplate;
