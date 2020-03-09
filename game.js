@@ -5,13 +5,18 @@ var sanity = 50;
 var animating = false;
 
 var score = 0;
-var daysSurvived = 0;    
+var daysSurvived = 0;
 
 var currentScenario = 0;
 var lastScenario;
 
 var scenarios = JSON.parse(rawData).scenarios;
+/*
+const rawData = `
 
+rawJson = `{
+"array": 
+*/
 var availableRandomEvents = [];
 var availableStoryEvents = [];
 
@@ -31,7 +36,7 @@ var attempt = 1;
 
 var deathTemplate = {
     text: "ERROR: TEXT NOT SET",
-    image: "",
+    image: "Death.gif",
     choices: [
         {
             "text": "View Leaderboard",
@@ -48,7 +53,7 @@ function choice(cID) {
     if (animating) return;
     if (lastScenario === currentScenario) { alert('ERROR: SAME EVENT TWICE IN A ROW'); return; }
     lastScenario = currentScenario;
-    
+
     changeStats(scenarios[currentScenario].choices[cID].affects);
 
     if (scenarios[currentScenario].choices[cID].customDeath) {
@@ -96,8 +101,8 @@ function choice(cID) {
             currentScenario = events[Math.floor(Math.random() * events.length)];
             randomCount++;
         } else {
-            if (availableStoryEvents.length === 0) { alert("ERROR: OUT OF STORY EVENTS");}
-            currentScenario = availableStoryEvents[0]; 
+            if (availableStoryEvents.length === 0) { alert("ERROR: OUT OF STORY EVENTS"); }
+            currentScenario = availableStoryEvents[0];
             randomCount = 0;
         }
 
@@ -112,7 +117,7 @@ function choice(cID) {
     }
 }
 
-function endGame(deathMessage,image) {
+function endGame(deathMessage, image) {
     document.getElementById("card").style.visibility = "hidden";
     setTimeout(endScreen, 2500);
 
@@ -164,9 +169,9 @@ function restart() {
     newCard(0);
 }
 
-function newCard(sID,custom) {
+function newCard(sID, custom) {
     var scenario;
-    if (custom){
+    if (custom) {
         scenario = custom;
     } else {
         scenario = scenarios[sID];
@@ -191,7 +196,9 @@ function newCard(sID,custom) {
     infoElem.innerHTML = `<p>${scenario.text}</p>`;
 
     if (scenario.image) {
-        //IMAGE FORMAT
+        infoElem.innerHTML += `<div style="height:300px;">
+            <img class="w3-display-bottommiddle w3-dark-gray w3-round-large" src="resources/graphics/${scenario.image}" style="width:300px;padding:16px">
+            </div>`;
     }
 
     choiceElem.innerHTML = "";
@@ -222,21 +229,21 @@ function changeStats(changes = []) {
     animating = true;
     var interval = setInterval(frame, 25);
     function frame() {
-            var done = 0;
-            stats.forEach((stat, i) => {
-                if (stats[i] !== tStats[i] && stats[i] > 0 && stats[i] < 100) {
-                    if (stats[i] < tStats[i]) {
-                        stats[i]++;
-                    } else {
-                        stats[i]--;
-                    }
-                    elems[i].style.width = `${stats[i]}%`;
-                } else { done++; }
-            });
-            if (done === 3) {
-                clearInterval(interval);
-                animating = false;
-            }
+        var done = 0;
+        stats.forEach((stat, i) => {
+            if (stats[i] !== tStats[i] && stats[i] > 0 && stats[i] < 100) {
+                if (stats[i] < tStats[i]) {
+                    stats[i]++;
+                } else {
+                    stats[i]--;
+                }
+                elems[i].style.width = `${stats[i]}%`;
+            } else { done++; }
+        });
+        if (done === 3) {
+            clearInterval(interval);
+            animating = false;
+        }
     }
 }
 
