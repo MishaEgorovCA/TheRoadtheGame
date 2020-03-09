@@ -1,3 +1,7 @@
+var database = firebase.database(); //Leaderboard stuff
+var ref = database.ref('scores');
+ref.on('value', gotData, errData);
+
 var hunger = 50;
 var health = 50;
 var sanity = 50;
@@ -91,7 +95,7 @@ function choice(cID) {
 
         if (scenarios[currentScenario].choices[cID].chained) { //If chained next scenario is the chained one else
             currentScenario = scenarios[currentScenario].choices[cID].chained[Math.floor(Math.random() * scenarios[currentScenario].choices[cID].chained.length)];//Random chain
-        } else if ((randomCount === 0 || Math.random() > 0.7) && randomCount <= 2) { //chance of getting another random event or story
+        } else if ((randomCount === 0 || Math.random() > 0.2) && randomCount <= 3) { //chance of getting another random event or story
 
             var events = availableRandomEvents;
             index = events.indexOf(currentScenario);//remove current event so it doesnt repeat
@@ -246,6 +250,24 @@ function changeStats(changes = []) {
             animating = false;
         }
     }
+}
+
+function gotData(data) {
+    console.log(data.val());
+}
+
+function errData(err) {
+    console.log(err);
+}
+
+function submitScore() {
+    var data = {
+        name: playerName,
+        score: score
+    };
+
+    var ref = database.ref('scores');
+    ref.push(data);
 }
 
 newCard(0);

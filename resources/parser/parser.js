@@ -13,12 +13,26 @@ d.forEach((d, i) => {
             s.push({});
             s[c].text = d.scenario;
             s[c].image = d.imageNameOfFile ? d.imageNameOfFile : false;
-            s[c].choices = [{ "text": d.choices, "customDeath": d.customDeath ? d.customDeath : false, "affects": d.effectsHungerHealthSanity, "unlocks": d.unlocksId ? [d.unlocksId] : false, "locks": d.unlocksId ? [d.unlocksId] : false, "chained": d.chainedId ? typeof d.chainedId === "string" || d.chainedId instanceof String ? d.chainedId : [d.chainedId] : false}];
+            s[c].choices = [{
+                "text": d.choices,
+                "customDeath": d.customDeath ? d.customDeath : false,
+                "affects": d.effectsHungerHealthSanity,
+                "unlocks": d.unlocksId ? typeof d.unlocksId === "string" || d.unlocksId instanceof String ? d.unlocksId : [d.unlocksId] : false,
+                "locks": d.locksId ? typeof d.locksId === "string" || d.locksId instanceof String ? d.locksId : [d.locksId] : false,
+                "chained": d.chainedId ? typeof d.chainedId === "string" || d.chainedId instanceof String ? d.chainedId : [d.chainedId] : false
+            }];
             s[c].repeatable = d.repeatable ? d.repeatable : false;
             s[c].story = d.story ? d.story : false;
             s[c].locked = d.locked ? d.locked : false;
         } else {
-            s[c].choices.push({ "text": d.choices, "customDeath": d.customDeath ? d.customDeath : false, "affects": d.effectsHungerHealthSanity, "unlocks": d.unlocksId ? [d.unlocksId] : false, "locks": d.unlocksId ? [d.unlocksId] : false, "chained": d.chainedId ? typeof d.chainedId === "string" || d.chainedId instanceof String ? d.chainedId : [d.chainedId] : false });
+            s[c].choices.push({
+                "text": d.choices,
+                "customDeath": d.customDeath ? d.customDeath : false,
+                "affects": d.effectsHungerHealthSanity,
+                "unlocks": d.unlocksId ? typeof d.unlocksId === "string" || d.unlocksId instanceof String ? d.unlocksId : [d.unlocksId] : false,
+                "locks": d.locksId ? typeof d.locksId === "string" || d.locksId instanceof String ? d.locksId : [d.locksId] : false,
+                "chained": d.chainedId ? typeof d.chainedId === "string" || d.chainedId instanceof String ? d.chainedId : [d.chainedId] : false
+            });
         }
     }
 

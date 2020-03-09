@@ -4,6 +4,8 @@
 <head>
     <title>The Road the Game</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
     <style>
         @font-face {
             font-family: 'CustomFont';
@@ -50,13 +52,15 @@
         <div class="w3-row w3-light-gray w3-center" style="height:120px;margin:auto;width:580px;">
             <div class="w3-third w3-container">
                 <h2>Hunger</h2>
-                <div class="w3-grey w3-margin"> <!--id="0" style="outline-style:solid;outline-width:7px;outline-color:lightgrey;"-->
+                <div class="w3-grey w3-margin">
+                    <!--id="0" style="outline-style:solid;outline-width:7px;outline-color:lightgrey;"-->
                     <div class="w3-dark-grey" style="width:50%;height:24px" id="hunger"> </div>
                 </div>
             </div>
             <div class="w3-third w3-container">
                 <h2>Health</h2>
-                <div class="w3-grey w3-margin"> <!--id="1" style="outline-style:solid;outline-width:12px;outline-color:lightgrey;"-->
+                <div class="w3-grey w3-margin">
+                    <!--id="1" style="outline-style:solid;outline-width:12px;outline-color:lightgrey;"-->
                     <div class="w3-dark-grey" style="width:50%;height:24px" id="health"> </div>
                 </div>
             </div>
@@ -123,8 +127,26 @@
             </div>
             <span onclick="document.getElementById('tutorial').style.display='none'" class="w3-button" style="text-align: center; width: 100%">Continue</span>
         </div>
-    </div>  
+    </div>
 
+
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD7-m9AOZq05hILVf66LGsuShZU5D3ovD8",
+            authDomain: "the-road-leaderboard.firebaseapp.com",
+            databaseURL: "https://the-road-leaderboard.firebaseio.com",
+            projectId: "the-road-leaderboard",
+            storageBucket: "the-road-leaderboard.appspot.com",
+            messagingSenderId: "642066792343",
+            appId: "1:642066792343:web:a91b0ecc920b10494a0ed2",
+            measurementId: "G-2SDV4VBRSH"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script type="text/javascript" src="resources/scenarios.js"></script>
     <script type="text/javascript" src="game.js"></script>
 </body>

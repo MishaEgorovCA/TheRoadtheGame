@@ -2,7 +2,7 @@ const rawData = `{
     "scenarios": [
         {
             "text": "You, the father, and your boy are walking down a road south in an apocalyptic landscape. You push your cart of items and salvage what sources of food you can. Your goal is to survive. This means keeping your sanity as well.",
-            "image": "0.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Begin",
@@ -19,7 +19,7 @@ const rawData = `{
         },
         {
             "text": "You see a grocery store amongst the rubble. You want to enter but the ground is too rough to bring your cart in.",
-            "image": "1.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Leave your cart in the lot and enter the store",
@@ -46,7 +46,7 @@ const rawData = `{
         },
         {
             "text": "You find a vending machine. Using your arm, you run your hand inside the machine and pull out a can of Coca Cola.",
-            "image": "2.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Give the can of coca cola to the son",
@@ -59,7 +59,7 @@ const rawData = `{
                 {
                     "text": "Drink it yourself",
                     "customDeath": false,
-                    "affects": [10, -10, 20],
+                    "affects": [10, -10, -10],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -71,7 +71,7 @@ const rawData = `{
         },
         {
             "text": "You open your eyes to your wife standing in a white dress, wearing a white veil. ",
-            "image": "3.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Approach her and lift the veil",
@@ -100,7 +100,7 @@ const rawData = `{
         },
         {
             "text": "Another dream. This time you are caring for her as she is sick and lying in bed.",
-            "image": "4.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "You wish you were still with her",
@@ -129,7 +129,7 @@ const rawData = `{
         },
         {
             "text": "You open your wallet on the road, holding a picture of your wife in your hands.",
-            "image": "5.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Hold the picture to your chest ",
@@ -154,7 +154,7 @@ const rawData = `{
         },
         {
             "text": "You wake up to the sound of a truck and people marching down the road. Terrified, you quickly look around to find an escape.",
-            "image": "6.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Run away as fast as you can. Leave the cart as it is not as valuable as your son’s life.",
@@ -181,7 +181,7 @@ const rawData = `{
         },
         {
             "text": "One man walks off the road and notices your presence. You both freeze, eyes locked onto each other.",
-            "image": "7.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Gesture him to come towards you while locking your pistol onto his head.",
@@ -208,7 +208,7 @@ const rawData = `{
         },
         {
             "text": "The rough looking man comes towards you and offers to feed your son  if you both come on the truck.",
-            "image": "8.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Believe him and go to the truck with your son",
@@ -221,7 +221,7 @@ const rawData = `{
                 {
                     "text": "Don’t believe him and attempt to take the man up the road. This way, you can turn him loose and escape with a head start.",
                     "customDeath": false,
-                    "affects": [0, 0, 20],
+                    "affects": [0, 0, 10],
                     "unlocks": false,
                     "locks": false,
                     "chained": [
@@ -235,12 +235,12 @@ const rawData = `{
         },
         {
             "text": "Not agreeing with you, the man lunges at the boy, knife in hand.",
-            "image": "9.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Shoot him.",
                     "customDeath": false,
-                    "affects": [0, 0, -30],
+                    "affects": [0, 0, -20],
                     "unlocks": false,
                     "locks": false,
                     "chained": [
@@ -262,15 +262,17 @@ const rawData = `{
         },
         {
             "text": "Alerting the other men, you grab your son and begin to run into the woods.",
-            "image": "10.gif",
+            "image": false,
             "choices": [
                 {
-                    "text": "I must keep the boy alive.I need to run faster.",
+                    "text": "I must keep the boy alive. I need to run faster.",
                     "customDeath": false,
                     "affects": [0, -10, 20],
                     "unlocks": false,
                     "locks": false,
-                    "chained": false
+                    "chained": [
+                        46
+                    ]
                 },
                 {
                     "text": "I’m tired. I don’t think I can carry the boy any faster.",
@@ -278,7 +280,9 @@ const rawData = `{
                     "affects": [0, 0, -20],
                     "unlocks": false,
                     "locks": false,
-                    "chained": false
+                    "chained": [
+                        46
+                    ]
                 }
             ],
             "repeatable": false,
@@ -287,7 +291,7 @@ const rawData = `{
         },
         {
             "text": "You are hungry and tired! You come across a once grand house high above the road. Tall with its white doric columns, the home dominated the field of dead grass.",
-            "image": "11.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Risk it and go in for shelter",
@@ -314,7 +318,7 @@ const rawData = `{
         },
         {
             "text": "As you explore the home you come across a room with a hatch in the floor. Its locked with a padlock.",
-            "image": "12.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Open the door",
@@ -341,7 +345,7 @@ const rawData = `{
         },
         {
             "text": "You open the door and see absolute darkness.",
-            "image": "13.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Use your light to go in and explore",
@@ -368,7 +372,7 @@ const rawData = `{
         },
         {
             "text": "As you walk in through the cold and damp dark cellar you feel the ungodly stench in the air. As you walk around you see strange shapes in the darkness.",
-            "image": "14.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Shine the light on them",
@@ -395,7 +399,7 @@ const rawData = `{
         },
         {
             "text": "As you shined the light on the figurines you see a man with legs gone to the hip. The remaining blackened and burned stumps hurt your eyes. ",
-            "image": "15.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Eat them as well. Food will sate the hunger",
@@ -428,7 +432,7 @@ const rawData = `{
         },
         {
             "text": "As you try to help the prisoners, the cannibals catch you and imprison you in this very cellar. You will continue to be eaten until the day you die.",
-            "image": "16.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Oh no.",
@@ -445,7 +449,7 @@ const rawData = `{
         },
         {
             "text": "As you try to help the prisoners, they attack and eat you. There are no good guys in the world.",
-            "image": "17.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Oh no.",
@@ -462,7 +466,7 @@ const rawData = `{
         },
         {
             "text": "You made the moral and pragmatic choice. The prisoners thank you and offer you supplies to aid in your journey.",
-            "image": "18.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "YES",
@@ -479,7 +483,7 @@ const rawData = `{
         },
         {
             "text": "Exploring homes in your surroundings, you come across a strange piece of plywood randomly placed on the grass field. Upon moving it, you discover another hatch.",
-            "image": "19.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Leave it. You do not know what could be in there",
@@ -505,7 +509,7 @@ const rawData = `{
         },
         {
             "text": "As you enter the hatch through the ground you discover that the risk brought rewards. You see a bunker with beds and food. ",
-            "image": "20.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Take a risk and stay the night for safe shelter.",
@@ -530,7 +534,7 @@ const rawData = `{
         },
         {
             "text": "The cannibals found you and eat you",
-            "image": "21.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Oh no.",
@@ -547,7 +551,7 @@ const rawData = `{
         },
         {
             "text": "You stayed a night and have gotten some rest. ",
-            "image": "22.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Risk another night ",
@@ -572,7 +576,7 @@ const rawData = `{
         },
         {
             "text": "You see an old man walking down the road",
-            "image": "23.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Steal from him",
@@ -606,7 +610,7 @@ const rawData = `{
         },
         {
             "text": "As you sit and eat with the old man, he speaks of how he lost faith in humanity. firmly stating that there is no God, he explains that he trusts no one.",
-            "image": "24.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Hopelessly agree with the man that God is gone ",
@@ -631,7 +635,7 @@ const rawData = `{
         },
         {
             "text": "As you progress on you journey down the road, you come to a beach and see the gray ocean with despair. ",
-            "image": "25.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Explore the beach, maybe you will find something ",
@@ -658,7 +662,7 @@ const rawData = `{
         },
         {
             "text": "You walk down the shoreline and see an abandoned ship ",
-            "image": "26.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Investigate it",
@@ -685,7 +689,7 @@ const rawData = `{
         },
         {
             "text": "Upon investigation you discover food and a flare gun that can aid you in your journey",
-            "image": "27.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Take the food and go find shelter",
@@ -712,7 +716,7 @@ const rawData = `{
         },
         {
             "text": "Upon the next morning, you wake up and see that the ship is mainly damaged on the deck and that the hull is intact. Your instincts tells you to take advantage of this",
-            "image": "28.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Make the necessary repairs and sail to the seas. The ocean has less cannibals than the road.",
@@ -737,7 +741,7 @@ const rawData = `{
         },
         {
             "text": "You get shot with an arrow.",
-            "image": "29.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Quickly retaliate with whatever weapon you have in your possession",
@@ -766,7 +770,7 @@ const rawData = `{
         },
         {
             "text": "The arrow wound is dripping with blood. How will you act to deal with this",
-            "image": "30.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Keep the arrow in, you can handle it",
@@ -779,7 +783,10 @@ const rawData = `{
                 {
                     "text": "Take the arrow out and operate on the wound",
                     "customDeath": "Your lack of experience with medical practices caused the wound to become infected and you die.",
-                    "affects": [[0, 5, 0], [0, -100, 0]],
+                    "affects": [
+                        [0, 5, 0],
+                        [0, -100, 0]
+                    ],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -791,7 +798,7 @@ const rawData = `{
         },
         {
             "text": "The wheel on your cart begins to loosen and is not working very efficiently, making it difficult to push around. Looks like it needs to be “bolted”(pg.17).",
-            "image": "31.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Find some tools and being working on the wheel.",
@@ -804,7 +811,7 @@ const rawData = `{
                 {
                     "text": "Continue on without fixing the wheel.",
                     "customDeath": false,
-                    "affects": [10, -20, -20],
+                    "affects": [10, -15, -15],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -816,12 +823,15 @@ const rawData = `{
         },
         {
             "text": "You go to a smokehouse and find a “ham gambreled up in a high corner”(pg.17).",
-            "image": "32.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Grab it and begin feasting with your son.",
                     "customDeath": false,
-                    "affects": [[30, 20, 30], [-30, -20, -30]],
+                    "affects": [
+                        [20, 15, 15],
+                        [-20, -15, -15]
+                    ],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -841,7 +851,7 @@ const rawData = `{
         },
         {
             "text": "Looking over a valley you and your son see a dam down below, which intrigues him. He wants to “go down there and see it”(pg.20).",
-            "image": "33.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Tell him that it is too far and that the view from here is good enough.",
@@ -866,7 +876,7 @@ const rawData = `{
         },
         {
             "text": "Walking into a home, you see three cans of “home canned tomatoes”(pg.22). You study them carefully.",
-            "image": "34.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Home canned tomatoes are not trustworthy.",
@@ -879,7 +889,10 @@ const rawData = `{
                 {
                     "text": "Food is food. You have to take advantage of what you find.",
                     "customDeath": false,
-                    "affects": [[20, 30, 20], [-20, -30, -20]],
+                    "affects": [
+                        [20, 25, 10],
+                        [-20, -25, -10]
+                    ],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -891,12 +904,12 @@ const rawData = `{
         },
         {
             "text": "The sound of an “earthquake”(pg.28) wakes both of you up. Your son cries due to the violent sounds it makes.",
-            "image": "35.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Hug your son and tell him that it’s alright.",
                     "customDeath": false,
-                    "affects": [0, -10, 30],
+                    "affects": [0, -10, 20],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -904,7 +917,7 @@ const rawData = `{
                 {
                     "text": "Ignore the noises that the earthquake and your son are making. Go back to sleep. It’s more important.",
                     "customDeath": false,
-                    "affects": [0, 10, -30],
+                    "affects": [0, 10, -20],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -916,7 +929,7 @@ const rawData = `{
         },
         {
             "text": "You see a forest fire, “flaring and shimmering”(pg.31) in the intense cold. However, you feel like the colours triggered a memory that has been “long forgotten”",
-            "image": "36.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Ponder into deep thoughts as you stare at the fire.",
@@ -941,12 +954,12 @@ const rawData = `{
         },
         {
             "text": "You decide to make some hot chocolate with one of the last remaining packets of “cocoa”(pg. 34).",
-            "image": "37.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Divide the hot cocoa between you and your son.",
                     "customDeath": false,
-                    "affects": [10, 10, 10],
+                    "affects": [10, -10, 10],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -954,7 +967,7 @@ const rawData = `{
                 {
                     "text": "Give it all to your son.",
                     "customDeath": false,
-                    "affects": [-10, -10, -10],
+                    "affects": [-10, 10, -10],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -966,12 +979,12 @@ const rawData = `{
         },
         {
             "text": "You come across a long patch macadam(pg.49) on the road that is still warm and sticks to your shoes as you try to walk through it.",
-            "image": "38.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Backtrack and wait for the macadam to cool before trudging on.",
                     "customDeath": false,
-                    "affects": [10, 20, 0],
+                    "affects": [10, 10, 0],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -979,7 +992,7 @@ const rawData = `{
                 {
                     "text": "Don’t lose hope! Continue to walk through the sticky substance in order to maintain good time.",
                     "customDeath": false,
-                    "affects": [-10, -20, 0],
+                    "affects": [-10, -10, 0],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -991,12 +1004,12 @@ const rawData = `{
         },
         {
             "text": "You spot a man who has “been struck by lightning”(pg.51). The boy, feeling pity, insists on helping the man.",
-            "image": "39.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "You are one of the good guys! Help the man in need.",
                     "customDeath": false,
-                    "affects": [-20, -20, 20],
+                    "affects": [-10, -15, 15],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -1016,12 +1029,12 @@ const rawData = `{
         },
         {
             "text": "Your son randomly becomes eager to spend time with you. He asks if you want to play “cards”(pg.53).",
-            "image": "40.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Cards are a waste of time and you need to continue looting houses.",
                     "customDeath": false,
-                    "affects": [10, 10, -30],
+                    "affects": [10, 10, -20],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -1029,7 +1042,7 @@ const rawData = `{
                 {
                     "text": "Spending valuable time with your son is important.",
                     "customDeath": false,
-                    "affects": [-10, -10, 30],
+                    "affects": [-10, -10, 20],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -1041,7 +1054,7 @@ const rawData = `{
         },
         {
             "text": "The fire you made is quickly diminishing, and will require more wood to stay alive. You want to break up some branches but you’re afraid it might “wake the boy”. (pg.75)",
-            "image": "41.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "A fire is necessary for the boy’s survival and so waking him up won’t be a big deal.",
@@ -1066,12 +1079,12 @@ const rawData = `{
         },
         {
             "text": "You hear the sound of a truck and you’re afraid that the snow tracks that you’ve made will get traced. ",
-            "image": "42.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Go the extra mile, literally. Walk around in circles to confuse them.",
                     "customDeath": false,
-                    "affects": [-10, -10, 10],
+                    "affects": [-5, -5, 10],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -1080,18 +1093,22 @@ const rawData = `{
                     "text": "They won’t be able to find the tracks anyways.Save your stamina.",
                     "customDeath": false,
                     "affects": [10, 10, -10],
-                    "unlocks": false,
-                    "locks": false,
+                    "unlocks": [
+                        53
+                    ],
+                    "locks": [
+                        42
+                    ],
                     "chained": false
                 }
             ],
-            "repeatable": false,
+            "repeatable": true,
             "story": false,
             "locked": false
         },
         {
             "text": "You find a dog with it's tail between it's legs seemingly asking for food. Your son asks you if you can give it some food.",
-            "image": "43.gif",
+            "image": false,
             "choices": [
                 {
                     "text": "Pet the dog an let it go.",
@@ -1120,19 +1137,17 @@ const rawData = `{
                 {
                     "text": "Keep the dog.",
                     "customDeath": false,
-                    "affects": [-20, -5, 30],
-                    "unlocks": [
-                        44
-                    ],
+                    "affects": [-20, -5, 35],
+                    "unlocks": [44, 51, 52],
                     "locks": [
-                        44
+                        43
                     ],
                     "chained": false
                 },
                 {
                     "text": "Eat the dog.",
                     "customDeath": false,
-                    "affects": [15, 0, -10],
+                    "affects": [20, 0, -20],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -1144,24 +1159,22 @@ const rawData = `{
         },
         {
             "text": "YOU ARE HUNGRY. What do you do?",
-            "image": "44.gif",
+            "image": false,
             "choices": [
                 {
-                    "text": "Eat the dog.",
+                    "text": "Eat your dog.",
                     "customDeath": false,
-                    "affects": [20, 0, -20],
+                    "affects": [15, 0, -25],
                     "unlocks": [
                         43
                     ],
-                    "locks": [
-                        43
-                    ],
+                    "locks": [44, 51, 52],
                     "chained": false
                 },
                 {
                     "text": "Keep going.",
                     "customDeath": false,
-                    "affects": [-20, 0, 10],
+                    "affects": [-10, 0, 10],
                     "unlocks": false,
                     "locks": false,
                     "chained": false
@@ -1170,6 +1183,548 @@ const rawData = `{
             "repeatable": true,
             "story": false,
             "locked": true
+        },
+        {
+            "text": "While the boy's sleeping, you decide to investigate a nearby farm. You find that there are rotting apples scattered around an orcid.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Eat some of the apples.",
+                    "customDeath": false,
+                    "affects": [20, -10, -10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Collect the apples and bring them back to the boy to the boy to eat together.",
+                    "customDeath": false,
+                    "affects": [20, -20, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Leave the apples.",
+                    "customDeath": false,
+                    "affects": [-10, 0, -10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You narrowly escape and slowly bring yourself and the boy back around to where you left the cart.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Carry on down the road",
+                    "customDeath": false,
+                    "affects": [5, -5, 5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Rest here for a bit.",
+                    "customDeath": false,
+                    "affects": [10, 10, -5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": true,
+            "locked": false
+        },
+        {
+            "text": "Its getting dark and you are tired from a long journey.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Sleep on the road",
+                    "customDeath": false,
+                    "affects": [0, 10, -10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Get off the road and sleep in the plains",
+                    "customDeath": false,
+                    "affects": [-5, 10, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": true,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You are hungry and see a family in the distance.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Attack and eat them",
+                    "customDeath": false,
+                    "affects": [15, 5, -10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Introduce youself. They look friendly, They might have food.",
+                    "customDeath": false,
+                    "affects": [10, 10, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Stay away from them. You must not trust anyone",
+                    "customDeath": false,
+                    "affects": [-5, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": true,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You see a group of men walk buy with shotguns.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Attack and eat them",
+                    "customDeath": "The men were noticed you sneakign up on them and shot you dead",
+                    "affects": [0, -100, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Hide",
+                    "customDeath": false,
+                    "affects": [0, 0, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Introduce yourself. They could be allies",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        50
+                    ]
+                }
+            ],
+            "repeatable": true,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "The men saw your self-introuction as weakness and decided to beat you up to teach you a lesson",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Owch!",
+                    "customDeath": false,
+                    "affects": [0, -15, -5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "Your dog leads you to an abandoned home with perfectly preserved canned food. ",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Eat the food and thank your dog; it as a great idea to bring him.",
+                    "customDeath": false,
+                    "affects": [10, 10, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Leave the food. You have enough",
+                    "customDeath": false,
+                    "affects": [-10, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": true,
+            "story": false,
+            "locked": true
+        },
+        {
+            "text": "Your dog is injured. He scratched his paw. He will need a few weeks rest.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Put the dog on the cart and fix his paw. He is family",
+                    "customDeath": false,
+                    "affects": [-10, -5, 15],
+                    "unlocks": false,
+                    "locks": [
+                        52
+                    ],
+                    "chained": false
+                },
+                {
+                    "text": "Kill him and put him of his misery.",
+                    "customDeath": false,
+                    "affects": [0, 0, -15],
+                    "unlocks": [
+                        43
+                    ],
+                    "locks": [44, 51, 52],
+                    "chained": false
+                },
+                {
+                    "text": "Leave him behind",
+                    "customDeath": false,
+                    "affects": [0, 0, -15],
+                    "unlocks": [
+                        43
+                    ],
+                    "locks": [44, 51, 52],
+                    "chained": false
+                },
+                {
+                    "text": "Eat him now",
+                    "customDeath": false,
+                    "affects": [15, 0, -25],
+                    "unlocks": [
+                        43
+                    ],
+                    "locks": [44, 51, 52],
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "The men from the truck found you and are closing in on your position.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Run off the road for saftey",
+                    "customDeath": false,
+                    "affects": [-5, -5, 5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Stay and fight. You could ty to hijack the truck.",
+                    "customDeath": "You used a cadaver to stop the truck, but as you attacked the drivers, a group of men jumped out from the back of the truck and captured you for later consumption. ",
+                    "affects": [0, -100, 0],
+                    "unlocks": [
+                        42
+                    ],
+                    "locks": [
+                        53
+                    ],
+                    "chained": false
+                }
+            ],
+            "repeatable": true,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "On the road, you pass a sleeping man with supplies.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Kill him and take his supplies",
+                    "customDeath": false,
+                    "affects": [10, 10, -10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Leave him alone",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Leave him some of your food and supplies",
+                    "customDeath": false,
+                    "affects": [-10, -10, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You spot a kitten on your jounrey.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Follow it",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        56
+                    ]
+                },
+                {
+                    "text": "Ignore it",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "That cat leads you to a store with supplies. As you sit and rest, you see him playing with shoelaces. Upon investigation you see it has an entire collection of shoes.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Take some supplies and new shoes",
+                    "customDeath": false,
+                    "affects": [10, 10, 15],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Take new shoes",
+                    "customDeath": false,
+                    "affects": [0, 10, 15],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Leave everything",
+                    "customDeath": false,
+                    "affects": [0, -5, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You come upon the ruins of Atlanta.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Explore them",
+                    "customDeath": false,
+                    "affects": [0, -5, 10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        58
+                    ]
+                },
+                {
+                    "text": "Cities arent safe. Keep travelling.",
+                    "customDeath": false,
+                    "affects": [0, 0, -5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "As you explore it you see the end of a once great city. Everything is gray and in ruins.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Go to the library and read some books. You must preserve the flame.",
+                    "customDeath": false,
+                    "affects": [0, 0, 15],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        59
+                    ]
+                },
+                {
+                    "text": "Go to find some safe place to stay over night",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        61
+                    ]
+                },
+                {
+                    "text": "Go find a store for food",
+                    "customDeath": false,
+                    "affects": [10, 5, 5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        60
+                    ]
+                },
+                {
+                    "text": "Run away. The city looks dangrous. ",
+                    "customDeath": false,
+                    "affects": [-5, 0, 5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You found the destroyed library. Some walls are gone and the building is crumbling. Howevr, you deicde to read some books. You had some laugh and even found a survival guide. However, it is getting dark and late.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Stay in the library",
+                    "customDeath": "The building is old and crumbling. During the night, a support beam failed and a tonne of rubble crashed down on you.",
+                    "affects": [0, -100, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Go find shelter elsewhere",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        61
+                    ]
+                },
+                {
+                    "text": "Leave the city",
+                    "customDeath": false,
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You find a supermarket and some food. However, it is getting dark and late.",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Stay in the store",
+                    "customDeath": "Although you the pragmatic choice by staying in an intact building with food, the bad guys have thought of that too. They found you and attacked you.",
+                    "affects": [0, -100, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Go find shelter elsewhere",
+                    "customDeath": false,
+                    "affects": [0, 0, 0],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": [
+                        61
+                    ]
+                },
+                {
+                    "text": "Leave the city",
+                    "customDeath": false,
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
+        },
+        {
+            "text": "You find a nice intact lookign and insulated home. ",
+            "image": false,
+            "choices": [
+                {
+                    "text": "Stay the night and sleep in bed for saftey",
+                    "customDeath": "You took a chance and slept in bed. Turns out, the bad guys live in this home. They found you in their bed and decided to kill you.",
+                    "affects": [
+                        [0, -100, 0],
+                        [0, 10, 10]
+                    ],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Stay the night but hide. You might not get much sleep.",
+                    "customDeath": false,
+                    "affects": [0, 0, -5],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                },
+                {
+                    "text": "Leave the city. The house looks suspicious.",
+                    "customDeath": false,
+                    "affects": [0, -5, -10],
+                    "unlocks": false,
+                    "locks": false,
+                    "chained": false
+                }
+            ],
+            "repeatable": false,
+            "story": false,
+            "locked": false
         }
     ]
 }`;
