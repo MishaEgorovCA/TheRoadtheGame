@@ -4,8 +4,8 @@
 <head>
     <title>The Road the Game</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!--<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
     <style>
         @font-face {
             font-family: 'CustomFont';
@@ -33,20 +33,26 @@
             overflow: auto;
             white-space: normal;
         }
+        li {
+            font-size:27px;
+        }
     </style>
 </head>
 
-<body class="w3-gray" id="body" onload="document.getElementById('tutorial').style.display = 'block';">
+<body class="w3-gray" id="body" onload="document.getElementById('prompt').style.display = 'block';">
     <div class="w3-container w3-dark-gray w3-text-white"><h1>The Road the Game</h1></div>
     <div class="w3-display-container">
         <!--Days Survived-->
         <div class="w3-display-topleft w3-margin-left" style="text-shadow: 1px 1px 0 #444">Survived <span class="w3-xlarge" id="daysSurvived">0000</span> days.</div>
         <!--Score-->
-        <div class="w3-display-topright w3-margin-right" style="text-shadow:1px 1px 0 #444">Score: <span class="w3-xlarge" id="score">0</span></div>
+        <div class="w3-display-topright w3-margin-right" style="text-shadow:1px 1px 0 #444">Score: <span class="w3-xlarge" id="score">0</span><br /><span class="w3-tiny" id="name"></span></div>
         <!--Credit-->
         <div class="w3-display-bottomright w3-margin-right w3-text-light-gray w3-small" style="text-shadow:1px 1px 0 #444">A collaboration between:<br /><span class="w3-small">Kentaro, Misha, Ariel</span></div>
-
-        <div class="w3-button w3-display-bottomleft w3-margin-left" style="text-shadow: 1px 1px 0 #444" onclick="document.getElementById('tutorial').style.display = 'block';">Tutorial</div>
+        <!--Tutorial-->
+        <div class="w3-display-bottomleft w3-margin-left" style="text-shadow: 1px 1px 0 #444">
+            <div class="w3-button" onclick="document.getElementById('tutorial').style.display = 'block';">Tutorial</div><br/>
+            <div class="w3-button" onclick="leaderboard();">Quit to Leaderboard</div>
+        </div>
         <!--Main Game Info-->
         <!--Player Stats-->
         <div class="w3-row w3-light-gray w3-center" style="height:120px;margin:auto;width:580px;">
@@ -78,8 +84,8 @@
                     Loading...
                 </p>
                 <!--<div style="height:300px;">
-                    <img class="w3-display-bottommiddle w3-dark-gray w3-round-large" src="resources/graphics/31.gif" style="width:300px;padding:16px">
-                </div>-->
+                <img class="w3-display-bottommiddle w3-dark-gray w3-round-large" src="resources/graphics/31.gif" style="width:300px;padding:16px">
+            </div>-->
             </div>
 
             <!--Choices-->
@@ -129,6 +135,17 @@
         </div>
     </div>
 
+    <div id="prompt" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <h2>Enter a username</h2>
+                <p>This is what people will see on the leaderboard</p>
+                <input id="username"/>
+                <p class="w3-text-red" id="usernameError"></p>
+            </div>
+            <span onclick="username(document.getElementById('username').value)" class="w3-button" style="text-align: center; width: 100%">Enter</span>
+        </div>
+    </div>
 
 
 
@@ -145,7 +162,7 @@
             measurementId: "G-2SDV4VBRSH"
         };
         // Initialize Firebase
-        ///firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
     </script>
     <script type="text/javascript" src="resources/scenarios.js"></script>
     <script type="text/javascript" src="game.js"></script>

@@ -1,6 +1,9 @@
-//var database = firebase.database(); //Leaderboard stuff
-//var ref = database.ref('scores');
-//ref.on('value', gotData, errData);
+var database = firebase.database(); //Leaderboard stuff
+var ref = database.ref('scores');
+ref.on('value', gotData, errData);
+var key;
+var viewingLeaderboard = false;
+var list = [];
 
 var hunger = 50;
 var health = 50;
@@ -14,7 +17,7 @@ var daysSurvived = 0;
 var currentScenario = 0;
 var lastScenario;
 
-var scenarios = JSON.parse(rawData).scenarios;
+const scenarios = JSON.parse(rawData).scenarios;
 /*
 const rawData = `
 
@@ -53,6 +56,16 @@ var deathTemplate = {
     ]
 };
 
+var leaderboardTemplate = {
+    text: "ERROR: TEXT NOT SET",
+    choices: [
+        {
+            "text": "Restart",
+            "chained": "restart"
+        }
+    ]
+};
+
 function choice(cID) {
     if (animating) return;
     if (lastScenario === currentScenario) { alert('ERROR: SAME EVENT TWICE IN A ROW'); return; }
@@ -74,6 +87,7 @@ function choice(cID) {
 
         daysSurvived += Math.floor(Math.random() * 5 + 2);
         score += 100;
+        submitScore();
 
         var index = 0;
         if (!scenarios[currentScenario].repeatable) {//if non-repeatable or story remove from available
@@ -95,7 +109,7 @@ function choice(cID) {
 
         if (scenarios[currentScenario].choices[cID].chained) { //If chained next scenario is the chained one else
             currentScenario = scenarios[currentScenario].choices[cID].chained[Math.floor(Math.random() * scenarios[currentScenario].choices[cID].chained.length)];//Random chain
-        } else if ((randomCount === 0 || Math.random() > 0.2) && randomCount <= 3) { //chance of getting another random event or story
+        } else if (((randomCount === 0 || Math.random() > 0.35) && randomCount <= 2) || availableStoryEvents.length === 0) { //chance of getting another random event or story
 
             var events = availableRandomEvents;
             index = events.indexOf(currentScenario);//remove current event so it doesnt repeat
@@ -136,11 +150,16 @@ function endGame(deathMessage, image) {
 }
 
 function leaderboard() {
-    alert("Leaderboard under construction still");
+    viewingLeaderboard = true;
+    newCard(0, leaderboardTemplate, true);
 }
 
 function restart() {
     document.getElementById("body").style.backgroundImage = "none";
+
+    viewingLeaderboard = false;
+
+    key = "";
 
     hunger = 50;
     health = 50;
@@ -174,7 +193,7 @@ function restart() {
     newCard(0);
 }
 
-function newCard(sID, custom) {
+function newCard(sID, custom, leaderboard) {
     var scenario;
     if (custom) {
         scenario = custom;
@@ -199,6 +218,10 @@ function newCard(sID, custom) {
     var choiceElem = document.getElementById("cardChoices");
 
     infoElem.innerHTML = `<p>${scenario.text}</p>`;
+    if (leaderboard) {
+        infoElem.innerHTML = `<h2>Leaderboard</h2><ol class="w3-border w3-topbar w3-bottombar w3-leftbar w3-rightbar w3-border-dark-gray" id="leaderboard" style="height:350px;overflow-y:scroll"></ol>`;
+        updateLeaderboard();
+    }
 
     if (scenario.image) {
         infoElem.innerHTML += `<div style="height:300px;">
@@ -252,8 +275,53 @@ function changeStats(changes = []) {
     }
 }
 
+function username(name) {
+    var err = document.getElementById("usernameError");
+    var nameList = [];
+    list.forEach((item, i) => {
+        nameList.push(item.name);
+    });
+
+    if (name.replace(/ /g, "") === "") {
+        err.innerHTML = "May not be blank";
+    } else if (name.split("").length > 32) {
+        err.innerHTML = "Name may not be more than 32 characters";
+    } else if (nameList.includes(name)) {
+        err.innerHTML = "That name is already taken";
+    } else {
+        playerName = name;
+        document.getElementById('name').innerHTML = name;
+        document.getElementById('prompt').style.display = 'none';
+        document.getElementById('tutorial').style.display = 'block';
+        submitScore();
+    }
+}
+
+
+function updateLeaderboard() {
+    var leaderboardElem = document.getElementById("leaderboard");
+    leaderboardElem.innerHTML = '';
+    list.forEach((item, i) => {
+        leaderboardElem.innerHTML += `<li class="w3-display-container w3-margin-right">${item.name}<span class="w3-display-right">${item.score}</span></li>`;
+    });
+}
+
 function gotData(data) {
-    console.log(data.val());
+    data = data.val();
+    console.log(data);
+    list = [];
+
+
+    Object.keys(data).forEach((key)=>{
+        list.push({ name: data[key].name, score: data[key].score });
+    });
+    list.sort(function (a, b) {
+        return b.score - a.score;
+    });
+
+    if (viewingLeaderboard) {
+        updateLeaderboard();
+    }
 }
 
 function errData(err) {
@@ -265,9 +333,15 @@ function submitScore() {
         name: playerName,
         score: score
     };
-
-    var ref = database.ref('scores');
-    ref.push(data);
+    var ref;
+    if (!key) {
+        ref = database.ref('scores');
+        var result = ref.push(data);
+        key = result.key;
+    } else {
+        ref = database.ref('scores/'+key);
+        ref.update(data);
+    }
 }
 
 newCard(0);

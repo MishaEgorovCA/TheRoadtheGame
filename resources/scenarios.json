@@ -2,7 +2,7 @@
   "scenarios": [
     {
       "text": "You, the father, and your boy are walking down a road south in an apocalyptic landscape. You push your cart of items and salvage what sources of food you can. Your goal is to survive. This means keeping your sanity as well.",
-      "image": false,
+      "image": "0.gif",
       "choices": [
         {
           "text": "Begin",
@@ -19,7 +19,7 @@
     },
     {
       "text": "You see a grocery store amongst the rubble. You want to enter but the ground is too rough to bring your cart in.",
-      "image": false,
+      "image": "1.gif",
       "choices": [
         {
           "text": "Leave your cart in the lot and enter the store",
@@ -46,7 +46,7 @@
     },
     {
       "text": "You find a vending machine. Using your arm, you run your hand inside the machine and pull out a can of Coca Cola.",
-      "image": false,
+      "image": "2.gif",
       "choices": [
         {
           "text": "Give the can of coca cola to the son",
@@ -71,7 +71,7 @@
     },
     {
       "text": "You open your eyes to your wife standing in a white dress, wearing a white veil. ",
-      "image": false,
+      "image": "3.gif",
       "choices": [
         {
           "text": "Approach her and lift the veil",
@@ -100,7 +100,7 @@
     },
     {
       "text": "Another dream. This time you are caring for her as she is sick and lying in bed.",
-      "image": false,
+      "image": "4.gif",
       "choices": [
         {
           "text": "You wish you were still with her",
@@ -129,7 +129,7 @@
     },
     {
       "text": "You open your wallet on the road, holding a picture of your wife in your hands.",
-      "image": false,
+      "image": "5.gif",
       "choices": [
         {
           "text": "Hold the picture to your chest ",
@@ -154,7 +154,7 @@
     },
     {
       "text": "You wake up to the sound of a truck and people marching down the road. Terrified, you quickly look around to find an escape.",
-      "image": false,
+      "image": "6.gif",
       "choices": [
         {
           "text": "Run away as fast as you can. Leave the cart as it is not as valuable as your son’s life.",
@@ -181,7 +181,7 @@
     },
     {
       "text": "One man walks off the road and notices your presence. You both freeze, eyes locked onto each other.",
-      "image": false,
+      "image": "7.gif",
       "choices": [
         {
           "text": "Gesture him to come towards you while locking your pistol onto his head.",
@@ -208,7 +208,7 @@
     },
     {
       "text": "The rough looking man comes towards you and offers to feed your son  if you both come on the truck.",
-      "image": false,
+      "image": "8.gif",
       "choices": [
         {
           "text": "Believe him and go to the truck with your son",
@@ -235,7 +235,7 @@
     },
     {
       "text": "Not agreeing with you, the man lunges at the boy, knife in hand.",
-      "image": false,
+      "image": "9.gif",
       "choices": [
         {
           "text": "Shoot him.",
@@ -262,7 +262,7 @@
     },
     {
       "text": "Alerting the other men, you grab your son and begin to run into the woods.",
-      "image": false,
+      "image": "10.gif",
       "choices": [
         {
           "text": "I must keep the boy alive. I need to run faster.",
@@ -291,7 +291,7 @@
     },
     {
       "text": "You are hungry and tired! You come across a once grand house high above the road. Tall with its white doric columns, the home dominated the field of dead grass.",
-      "image": false,
+      "image": "11.gif",
       "choices": [
         {
           "text": "Risk it and go in for shelter",
@@ -318,7 +318,7 @@
     },
     {
       "text": "As you explore the home you come across a room with a hatch in the floor. Its locked with a padlock.",
-      "image": false,
+      "image": "12.gif",
       "choices": [
         {
           "text": "Open the door",
@@ -345,7 +345,7 @@
     },
     {
       "text": "You open the door and see absolute darkness.",
-      "image": false,
+      "image": "13.gif",
       "choices": [
         {
           "text": "Use your light to go in and explore",
@@ -372,7 +372,7 @@
     },
     {
       "text": "As you walk in through the cold and damp dark cellar you feel the ungodly stench in the air. As you walk around you see strange shapes in the darkness.",
-      "image": false,
+      "image": "14.gif",
       "choices": [
         {
           "text": "Shine the light on them",
@@ -399,7 +399,7 @@
     },
     {
       "text": "As you shined the light on the figurines you see a man with legs gone to the hip. The remaining blackened and burned stumps hurt your eyes. ",
-      "image": false,
+      "image": "15.gif",
       "choices": [
         {
           "text": "Eat them as well. Food will sate the hunger",
@@ -432,7 +432,7 @@
     },
     {
       "text": "As you try to help the prisoners, the cannibals catch you and imprison you in this very cellar. You will continue to be eaten until the day you die.",
-      "image": false,
+      "image": "16.gif",
       "choices": [
         {
           "text": "Oh no.",
@@ -449,7 +449,7 @@
     },
     {
       "text": "As you try to help the prisoners, they attack and eat you. There are no good guys in the world.",
-      "image": false,
+      "image": "17.gif",
       "choices": [
         {
           "text": "Oh no.",
@@ -466,7 +466,7 @@
     },
     {
       "text": "You made the moral and pragmatic choice. The prisoners thank you and offer you supplies to aid in your journey.",
-      "image": false,
+      "image": "18.gif",
       "choices": [
         {
           "text": "YES",
@@ -483,7 +483,7 @@
     },
     {
       "text": "Exploring homes in your surroundings, you come across a strange piece of plywood randomly placed on the grass field. Upon moving it, you discover another hatch.",
-      "image": false,
+      "image": "19.gif",
       "choices": [
         {
           "text": "Leave it. You do not know what could be in there",
@@ -509,7 +509,7 @@
     },
     {
       "text": "As you enter the hatch through the ground you discover that the risk brought rewards. You see a bunker with beds and food. ",
-      "image": false,
+      "image": "20.gif",
       "choices": [
         {
           "text": "Take a risk and stay the night for safe shelter.",
@@ -534,7 +534,7 @@
     },
     {
       "text": "The cannibals found you and eat you",
-      "image": false,
+      "image": "21.gif",
       "choices": [
         {
           "text": "Oh no.",
@@ -551,7 +551,7 @@
     },
     {
       "text": "You stayed a night and have gotten some rest. ",
-      "image": false,
+      "image": "22.gif",
       "choices": [
         {
           "text": "Risk another night ",
@@ -576,7 +576,7 @@
     },
     {
       "text": "You see an old man walking down the road",
-      "image": false,
+      "image": "23.gif",
       "choices": [
         {
           "text": "Steal from him",
@@ -610,7 +610,7 @@
     },
     {
       "text": "As you sit and eat with the old man, he speaks of how he lost faith in humanity. firmly stating that there is no God, he explains that he trusts no one.",
-      "image": false,
+      "image": "24.gif",
       "choices": [
         {
           "text": "Hopelessly agree with the man that God is gone ",
@@ -635,7 +635,7 @@
     },
     {
       "text": "As you progress on you journey down the road, you come to a beach and see the gray ocean with despair. ",
-      "image": false,
+      "image": "25.gif",
       "choices": [
         {
           "text": "Explore the beach, maybe you will find something ",
@@ -662,7 +662,7 @@
     },
     {
       "text": "You walk down the shoreline and see an abandoned ship ",
-      "image": false,
+      "image": "26.gif",
       "choices": [
         {
           "text": "Investigate it",
@@ -689,7 +689,7 @@
     },
     {
       "text": "Upon investigation you discover food and a flare gun that can aid you in your journey",
-      "image": false,
+      "image": "27.gif",
       "choices": [
         {
           "text": "Take the food and go find shelter",
@@ -716,7 +716,7 @@
     },
     {
       "text": "Upon the next morning, you wake up and see that the ship is mainly damaged on the deck and that the hull is intact. Your instincts tells you to take advantage of this",
-      "image": false,
+      "image": "28.gif",
       "choices": [
         {
           "text": "Make the necessary repairs and sail to the seas. The ocean has less cannibals than the road.",
@@ -741,7 +741,7 @@
     },
     {
       "text": "You get shot with an arrow.",
-      "image": false,
+      "image": "29.gif",
       "choices": [
         {
           "text": "Quickly retaliate with whatever weapon you have in your possession",
@@ -770,7 +770,7 @@
     },
     {
       "text": "The arrow wound is dripping with blood. How will you act to deal with this",
-      "image": false,
+      "image": "30.gif",
       "choices": [
         {
           "text": "Keep the arrow in, you can handle it",
@@ -798,7 +798,7 @@
     },
     {
       "text": "The wheel on your cart begins to loosen and is not working very efficiently, making it difficult to push around. Looks like it needs to be “bolted”(pg.17).",
-      "image": false,
+      "image": "31.gif",
       "choices": [
         {
           "text": "Find some tools and being working on the wheel.",
@@ -823,7 +823,7 @@
     },
     {
       "text": "You go to a smokehouse and find a “ham gambreled up in a high corner”(pg.17).",
-      "image": false,
+      "image": "32.gif",
       "choices": [
         {
           "text": "Grab it and begin feasting with your son.",
@@ -851,7 +851,7 @@
     },
     {
       "text": "Looking over a valley you and your son see a dam down below, which intrigues him. He wants to “go down there and see it”(pg.20).",
-      "image": false,
+      "image": "33.gif",
       "choices": [
         {
           "text": "Tell him that it is too far and that the view from here is good enough.",
@@ -876,7 +876,7 @@
     },
     {
       "text": "Walking into a home, you see three cans of “home canned tomatoes”(pg.22). You study them carefully.",
-      "image": false,
+      "image": "34.gif",
       "choices": [
         {
           "text": "Home canned tomatoes are not trustworthy.",
@@ -904,7 +904,7 @@
     },
     {
       "text": "The sound of an “earthquake”(pg.28) wakes both of you up. Your son cries due to the violent sounds it makes.",
-      "image": false,
+      "image": "35.gif",
       "choices": [
         {
           "text": "Hug your son and tell him that it’s alright.",
@@ -929,7 +929,7 @@
     },
     {
       "text": "You see a forest fire, “flaring and shimmering”(pg.31) in the intense cold. However, you feel like the colours triggered a memory that has been “long forgotten”",
-      "image": false,
+      "image": "36.gif",
       "choices": [
         {
           "text": "Ponder into deep thoughts as you stare at the fire.",
@@ -954,7 +954,7 @@
     },
     {
       "text": "You decide to make some hot chocolate with one of the last remaining packets of “cocoa”(pg. 34).",
-      "image": false,
+      "image": "37.gif",
       "choices": [
         {
           "text": "Divide the hot cocoa between you and your son.",
@@ -979,7 +979,7 @@
     },
     {
       "text": "You come across a long patch macadam(pg.49) on the road that is still warm and sticks to your shoes as you try to walk through it.",
-      "image": false,
+      "image": "38.gif",
       "choices": [
         {
           "text": "Backtrack and wait for the macadam to cool before trudging on.",
@@ -1004,7 +1004,7 @@
     },
     {
       "text": "You spot a man who has “been struck by lightning”(pg.51). The boy, feeling pity, insists on helping the man.",
-      "image": false,
+      "image": "39.gif",
       "choices": [
         {
           "text": "You are one of the good guys! Help the man in need.",
@@ -1029,7 +1029,7 @@
     },
     {
       "text": "Your son randomly becomes eager to spend time with you. He asks if you want to play “cards”(pg.53).",
-      "image": false,
+      "image": "40.gif",
       "choices": [
         {
           "text": "Cards are a waste of time and you need to continue looting houses.",
@@ -1054,7 +1054,7 @@
     },
     {
       "text": "The fire you made is quickly diminishing, and will require more wood to stay alive. You want to break up some branches but you’re afraid it might “wake the boy”. (pg.75)",
-      "image": false,
+      "image": "41.gif",
       "choices": [
         {
           "text": "A fire is necessary for the boy’s survival and so waking him up won’t be a big deal.",
@@ -1079,7 +1079,7 @@
     },
     {
       "text": "You hear the sound of a truck and you’re afraid that the snow tracks that you’ve made will get traced. ",
-      "image": false,
+      "image": "42.gif",
       "choices": [
         {
           "text": "Go the extra mile, literally. Walk around in circles to confuse them.",
@@ -1108,7 +1108,7 @@
     },
     {
       "text": "You find a dog with it's tail between it's legs seemingly asking for food. Your son asks you if you can give it some food.",
-      "image": false,
+      "image": "43.gif",
       "choices": [
         {
           "text": "Pet the dog an let it go.",
@@ -1159,7 +1159,7 @@
     },
     {
       "text": "YOU ARE HUNGRY. What do you do?",
-      "image": false,
+      "image": "44.gif",
       "choices": [
         {
           "text": "Eat your dog.",
@@ -1186,7 +1186,7 @@
     },
     {
       "text": "While the boy's sleeping, you decide to investigate a nearby farm. You find that there are rotting apples scattered around an orcid.",
-      "image": false,
+      "image": "45.gif",
       "choices": [
         {
           "text": "Eat some of the apples.",
@@ -1219,7 +1219,7 @@
     },
     {
       "text": "You narrowly escape and slowly bring yourself and the boy back around to where you left the cart.",
-      "image": false,
+      "image": "46.gif",
       "choices": [
         {
           "text": "Carry on down the road",
@@ -1244,7 +1244,7 @@
     },
     {
       "text": "Its getting dark and you are tired from a long journey.",
-      "image": false,
+      "image": "47.gif",
       "choices": [
         {
           "text": "Sleep on the road",
@@ -1269,7 +1269,7 @@
     },
     {
       "text": "You are hungry and see a family in the distance.",
-      "image": false,
+      "image": "48.gif",
       "choices": [
         {
           "text": "Attack and eat them",
@@ -1302,7 +1302,7 @@
     },
     {
       "text": "You see a group of men walk buy with shotguns.",
-      "image": false,
+      "image": "49.gif",
       "choices": [
         {
           "text": "Attack and eat them",
@@ -1337,7 +1337,7 @@
     },
     {
       "text": "The men saw your self-introuction as weakness and decided to beat you up to teach you a lesson",
-      "image": false,
+      "image": "50.gif",
       "choices": [
         {
           "text": "Owch!",
@@ -1350,11 +1350,11 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
       "text": "Your dog leads you to an abandoned home with perfectly preserved canned food. ",
-      "image": false,
+      "image": "51.gif",
       "choices": [
         {
           "text": "Eat the food and thank your dog; it as a great idea to bring him.",
@@ -1379,7 +1379,7 @@
     },
     {
       "text": "Your dog is injured. He scratched his paw. He will need a few weeks rest.",
-      "image": false,
+      "image": "52.gif",
       "choices": [
         {
           "text": "Put the dog on the cart and fix his paw. He is family",
@@ -1424,11 +1424,11 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
       "text": "The men from the truck found you and are closing in on your position.",
-      "image": false,
+      "image": "53.gif",
       "choices": [
         {
           "text": "Run off the road for saftey",
@@ -1442,22 +1442,18 @@
           "text": "Stay and fight. You could ty to hijack the truck.",
           "customDeath": "You used a cadaver to stop the truck, but as you attacked the drivers, a group of men jumped out from the back of the truck and captured you for later consumption. ",
           "affects": [ 0, -100, 0 ],
-          "unlocks": [
-            42
-          ],
-          "locks": [
-            53
-          ],
+          "unlocks": false,
+          "locks": false,
           "chained": false
         }
       ],
       "repeatable": true,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
       "text": "On the road, you pass a sleeping man with supplies.",
-      "image": false,
+      "image": "54.gif",
       "choices": [
         {
           "text": "Kill him and take his supplies",
@@ -1484,13 +1480,13 @@
           "chained": false
         }
       ],
-      "repeatable": false,
+      "repeatable": true,
       "story": false,
       "locked": false
     },
     {
       "text": "You spot a kitten on your jounrey.",
-      "image": false,
+      "image": "55.gif",
       "choices": [
         {
           "text": "Follow it",
@@ -1511,13 +1507,13 @@
           "chained": false
         }
       ],
-      "repeatable": false,
+      "repeatable": true,
       "story": false,
       "locked": false
     },
     {
       "text": "That cat leads you to a store with supplies. As you sit and rest, you see him playing with shoelaces. Upon investigation you see it has an entire collection of shoes.",
-      "image": false,
+      "image": "56.gif",
       "choices": [
         {
           "text": "Take some supplies and new shoes",
@@ -1546,11 +1542,11 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
       "text": "You come upon the ruins of Atlanta.",
-      "image": false,
+      "image": "57.gif",
       "choices": [
         {
           "text": "Explore them",
@@ -1577,7 +1573,7 @@
     },
     {
       "text": "As you explore it you see the end of a once great city. Everything is gray and in ruins.",
-      "image": false,
+      "image": "58.gif",
       "choices": [
         {
           "text": "Go to the library and read some books. You must preserve the flame.",
@@ -1620,11 +1616,11 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
       "text": "You found the destroyed library. Some walls are gone and the building is crumbling. Howevr, you deicde to read some books. You had some laugh and even found a survival guide. However, it is getting dark and late.",
-      "image": false,
+      "image": "59.gif",
       "choices": [
         {
           "text": "Stay in the library",
@@ -1654,11 +1650,11 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
       "text": "You find a supermarket and some food. However, it is getting dark and late.",
-      "image": false,
+      "image": "60.gif",
       "choices": [
         {
           "text": "Stay in the store",
@@ -1688,11 +1684,11 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     },
     {
-      "text": "You find a nice intact lookign and insulated home. ",
-      "image": false,
+      "text": "You find a nice intact looking home. ",
+      "image": "61.gif",
       "choices": [
         {
           "text": "Stay the night and sleep in bed for saftey",
@@ -1724,7 +1720,7 @@
       ],
       "repeatable": false,
       "story": false,
-      "locked": false
+      "locked": true
     }
   ]
 }

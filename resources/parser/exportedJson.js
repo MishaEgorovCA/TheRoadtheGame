@@ -698,6 +698,7 @@ rawJson = `{
     {
         "id": 45,
         "scenario": "While the boy's sleeping, you decide to investigate a nearby farm. You find that there are rotting apples scattered around an orcid.",
+        "image": "45.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
@@ -716,6 +717,7 @@ rawJson = `{
     {
         "id": 46,
         "scenario": "You narrowly escape and slowly bring yourself and the boy back around to where you left the cart.",
+        "image": "46.gif",
         "repeatable": false,
         "story": true,
         "storySection": 4,
@@ -730,6 +732,7 @@ rawJson = `{
     {
         "id": 47,
         "scenario": "Its getting dark and you are tired from a long journey.",
+        "image": "47.gif",
         "repeatable": true,
         "story": false,
         "storySection": false,
@@ -744,6 +747,7 @@ rawJson = `{
     {
         "id": 48,
         "scenario": "You are hungry and see a family in the distance.",
+        "image": "48.gif",
         "repeatable": true,
         "story": false,
         "storySection": false,
@@ -762,6 +766,7 @@ rawJson = `{
     {
         "id": 49,
         "scenario": "You see a group of men walk buy with shotguns.",
+        "image": "49.gif",
         "repeatable": true,
         "story": false,
         "storySection": false,
@@ -782,16 +787,18 @@ rawJson = `{
     {
         "id": 50,
         "scenario": "The men saw your self-introuction as weakness and decided to beat you up to teach you a lesson",
+        "image": "50.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Owch!",
         "effectsHungerHealthSanity": "[0, -15, -5]"
     },
     {
         "id": 51,
         "scenario": "Your dog leads you to an abandoned home with perfectly preserved canned food. ",
+        "image": "51.gif",
         "repeatable": true,
         "story": false,
         "storySection": false,
@@ -806,10 +813,11 @@ rawJson = `{
     {
         "id": 52,
         "scenario": "Your dog is injured. He scratched his paw. He will need a few weeks rest.",
+        "image": "52.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Put the dog on the cart and fix his paw. He is family",
         "effectsHungerHealthSanity": "[-10, -5, 15]",
         "locksId": 52
@@ -835,24 +843,24 @@ rawJson = `{
     {
         "id": 53,
         "scenario": "The men from the truck found you and are closing in on your position.",
+        "image": "53.gif",
         "repeatable": true,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Run off the road for saftey",
         "effectsHungerHealthSanity": "[-5, -5, 5]"
     },
     {
         "choices": "Stay and fight. You could ty to hijack the truck.",
         "customDeath": "You used a cadaver to stop the truck, but as you attacked the drivers, a group of men jumped out from the back of the truck and captured you for later consumption. ",
-        "effectsHungerHealthSanity": "[0, -100, 0]",
-        "unlocksId": 42,
-        "locksId": 53
+        "effectsHungerHealthSanity": "[0, -100, 0]"
     },
     {
         "id": 54,
         "scenario": "On the road, you pass a sleeping man with supplies.",
-        "repeatable": false,
+        "image": "54.gif",
+        "repeatable": true,
         "story": false,
         "storySection": false,
         "locked": false,
@@ -870,7 +878,8 @@ rawJson = `{
     {
         "id": 55,
         "scenario": "You spot a kitten on your jounrey.",
-        "repeatable": false,
+        "image": "55.gif",
+        "repeatable": true,
         "story": false,
         "storySection": false,
         "locked": false,
@@ -885,10 +894,11 @@ rawJson = `{
     {
         "id": 56,
         "scenario": "That cat leads you to a store with supplies. As you sit and rest, you see him playing with shoelaces. Upon investigation you see it has an entire collection of shoes.",
+        "image": "56.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Take some supplies and new shoes",
         "effectsHungerHealthSanity": "[10, 10, 15]"
     },
@@ -903,6 +913,7 @@ rawJson = `{
     {
         "id": 57,
         "scenario": "You come upon the ruins of Atlanta.",
+        "image": "57.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
@@ -918,10 +929,11 @@ rawJson = `{
     {
         "id": 58,
         "scenario": "As you explore it you see the end of a once great city. Everything is gray and in ruins.",
+        "image": "58.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Go to the library and read some books. You must preserve the flame.",
         "effectsHungerHealthSanity": "[0, 0, 15]",
         "chainedId": 59
@@ -943,10 +955,11 @@ rawJson = `{
     {
         "id": 59,
         "scenario": "You found the destroyed library. Some walls are gone and the building is crumbling. Howevr, you deicde to read some books. You had some laugh and even found a survival guide. However, it is getting dark and late.",
+        "image": "59.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Stay in the library",
         "customDeath": "The building is old and crumbling. During the night, a support beam failed and a tonne of rubble crashed down on you.",
         "effectsHungerHealthSanity": "[0, -100, 0]"
@@ -962,10 +975,11 @@ rawJson = `{
     {
         "id": 60,
         "scenario": "You find a supermarket and some food. However, it is getting dark and late.",
+        "image": "60.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Stay in the store",
         "customDeath": "Although you the pragmatic choice by staying in an intact building with food, the bad guys have thought of that too. They found you and attacked you.",
         "effectsHungerHealthSanity": "[0, -100, 0]"
@@ -980,11 +994,12 @@ rawJson = `{
     },
     {
         "id": 61,
-        "scenario": "You find a nice intact lookign and insulated home. ",
+        "scenario": "You find a nice intact looking home. ",
+        "image": "61.gif",
         "repeatable": false,
         "story": false,
         "storySection": false,
-        "locked": false,
+        "locked": true,
         "choices": "Stay the night and sleep in bed for saftey",
         "customDeath": "You took a chance and slept in bed. Turns out, the bad guys live in this home. They found you in their bed and decided to kill you.",
         "effectsHungerHealthSanity": "[[0, -100, 0],[0, 10, 10]]"
@@ -1473,4 +1488,4 @@ rawJson = `{
         "storySection": false,
         "locked": false
     }
-]}`
+]}`;

@@ -12,7 +12,7 @@ d.forEach((d, i) => {
             c = d.id;
             s.push({});
             s[c].text = d.scenario;
-            s[c].image = d.imageNameOfFile ? d.imageNameOfFile : false;
+            s[c].image = d.image ? d.image : false;
             s[c].choices = [{
                 "text": d.choices,
                 "customDeath": d.customDeath ? d.customDeath : false,
