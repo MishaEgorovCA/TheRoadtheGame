@@ -1,6 +1,6 @@
-var database = firebase.database(); //Leaderboard stuff
-var ref = database.ref('scores');
-ref.on('value', gotData, errData);
+//var database = firebase.database(); //Leaderboard stuff
+//var ref = database.ref('scores');
+//ref.on('value', gotData, errData);
 
 var hunger = 50;
 var health = 50;
