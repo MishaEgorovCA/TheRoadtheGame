@@ -21,7 +21,7 @@
         {
           "text": "This gives: +5 -5 +5 and unlocks scenario #3 to happen in the future",
           "affects": [ 5, -5, 5 ],
-          "unlocks": [3],
+          "unlocks": [ 3 ],
           "locks": false,
           "chained": false
         }
@@ -72,7 +72,7 @@
           "chained": false
         },
         {
-          "text": "+100 +100 -100",
+          "text": "+100 +100 +100",
           "affects": [ 100, 100, 100 ],
           "unlocks": false,
           "locks": false,
@@ -180,7 +180,7 @@
           "affects": [ 3, 3, 3 ],
           "unlocks": [ 6, 7 ],
           "locks": [ 0, 1, 2, 3, 4, 5, 8 ],
-          "chained": [6]
+          "chained": [ 6 ]
         }
       ],
       "repeatable": false,

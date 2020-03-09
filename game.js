@@ -81,7 +81,7 @@ function choice(cID) {
         }
 
         if (scenarios[currentScenario].choices[cID].chained) { //If chained next scenario is the chained one else
-            currentScenario = scenarios[currentScenario].choices[cID].chained;
+            currentScenario = scenarios[currentScenario].choices[cID].chained[Math.floor(Math.random() * scenarios[currentScenario].choices[cID].chained.length)];//Random chain
         } else if ((randomCount === 0 || Math.random() > 0.2) && randomCount <= 4) { //chance of getting another random event or story
             if (availableRandomEvents.length <= 1) { alert("ERROR: OUT OF RANDOM EVENTS"); }
 
@@ -200,6 +200,10 @@ function newCard(sID,custom) {
 }
 
 function changeStats(changes = []) {
+    if (Array.isArray(changes[0])) {
+        changes = changes[Math.floor(Math.random() * changes.length)];
+    }
+
     var stats = [hunger, health, sanity];
     var tStats = stats.map(function (num, idx) {
         return num + changes[idx];
