@@ -111,7 +111,7 @@ function choice(cID) {
             randomCount = 0;
         }
 
-        if (scenarios[lastScenario].choices[cID].unlocks) {//if contains events to unlock, make them available !! Did not make to work with unlocking story events !!
+        if (scenarios[lastScenario].choices[cID].unlocks) {//if contains events to unlock, make them available !!! Did not make to work with unlocking story events !!!
             scenarios[lastScenario].choices[cID].unlocks.forEach((unlockID) => {
                 if (!availableRandomEvents.includes(unlockID)) {
                     availableRandomEvents.push(unlockID);
