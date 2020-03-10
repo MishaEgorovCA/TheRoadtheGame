@@ -5,6 +5,8 @@ var key;
 var viewingLeaderboard = false;
 var list = [];
 
+var difficultyAmplifier = 1.2;
+
 var hunger = 50;
 var health = 50;
 var sanity = 50;
@@ -21,14 +23,14 @@ const scenarios = JSON.parse(rawData).scenarios;
 /*
 const rawData = `
 
-rawJson = `{
+var rawJson = `{
 "array": 
 */
 var availableRandomEvents = [];
 var availableStoryEvents = [];
 
 scenarios.forEach((scene, i) => {
-    if (scene.story) {
+    if (scene.story && !scene.locked) {
         availableStoryEvents.push(i);
     } else if (!scene.locked) {
         availableRandomEvents.push(i);
@@ -68,7 +70,11 @@ var leaderboardTemplate = {
 
 function choice(cID) {
     if (animating) return;
-    if (lastScenario === currentScenario) { alert('ERROR: SAME EVENT TWICE IN A ROW'); return; }
+    if (health === undefined || isNaN(health)) health = 50;
+    if (sanity === undefined || isNaN(sanity)) sanity = 50;
+    if (hunger === undefined || isNaN(hunger)) hunger = 50;
+
+    //if (lastScenario === currentScenario) { alert('ERROR: SAME EVENT TWICE IN A ROW'); return; }
     lastScenario = currentScenario;
 
     changeStats(scenarios[currentScenario].choices[cID].affects);
@@ -82,7 +88,7 @@ function choice(cID) {
     else if (health <= 0) { endGame(customDeathMessage ? customDeathMessage : "You become very sick. The coughing gets the best of you. You have died."); }
     else if (health >= 100) { endGame(customDeathMessage ? customDeathMessage : "You feel great just like the days before the apocalypse. You feel as though you have no limits. You push yourself, almost running down the road with your cart, but you overwork yourself and die."); }
     else if (sanity <= 0) { endGame(customDeathMessage ? customDeathMessage : "Your sanity drains. You question your choices. Did you do what is morally right? Are you the bad guy? In fear of becoming the bad guy, you suicide."); }
-    else if (sanity >= 100) { endGame(customDeathMessage ? customDeathMessage : "You fall into a state of bliss and stop caring about survival believing everything is great. This leads you to run into some bad guys, thinking they would help, but you’ve only provided them with a nice dinner meal. You have died."); }
+    else if (sanity >= 100) { endGame(customDeathMessage ? customDeathMessage : "You fall into a state of bliss and stop caring about survival believing everything is great. This leads you to run into some bad guys, thinking they would help, but youï¿½ve only provided them with a nice dinner meal. You have died."); }
     else {
 
         daysSurvived += Math.floor(Math.random() * 5 + 2);
@@ -111,7 +117,8 @@ function choice(cID) {
             currentScenario = scenarios[currentScenario].choices[cID].chained[Math.floor(Math.random() * scenarios[currentScenario].choices[cID].chained.length)];//Random chain
         } else if (((randomCount === 0 || Math.random() > 0.35) && randomCount <= 2) || availableStoryEvents.length === 0) { //chance of getting another random event or story
 
-            var events = availableRandomEvents;
+            var events = [];
+            availableRandomEvents.forEach((value)=>{events.push(value)});
             index = events.indexOf(currentScenario);//remove current event so it doesnt repeat
             if (index !== -1) events.splice(index, 1);
 
@@ -150,6 +157,7 @@ function endGame(deathMessage, image) {
 }
 
 function leaderboard() {
+    document.getElementById("body").style.backgroundImage = "none";
     viewingLeaderboard = true;
     newCard(0, leaderboardTemplate, true);
 }
@@ -179,7 +187,7 @@ function restart() {
     availableStoryEvents = [];
 
     scenarios.forEach((scene, i) => {
-        if (scene.story) {
+        if (scene.story && !scene.locked) {
             availableStoryEvents.push(i);
         } else if (!scene.locked) {
             availableRandomEvents.push(i);
@@ -246,7 +254,7 @@ function changeStats(changes = []) {
 
     var stats = [hunger, health, sanity];
     var tStats = stats.map(function (num, idx) {
-        return num + changes[idx];
+        return num + (changes[idx] * difficultyAmplifier);
     });
     hunger = tStats[0];
     health = tStats[1];
@@ -302,7 +310,7 @@ function updateLeaderboard() {
     var leaderboardElem = document.getElementById("leaderboard");
     leaderboardElem.innerHTML = '';
     list.forEach((item, i) => {
-        leaderboardElem.innerHTML += `<li class="w3-display-container w3-margin-right">${item.name}<span class="w3-display-right">${item.score}</span></li>`;
+        leaderboardElem.innerHTML += `<li class="w3-display-container w3-margin-right w3-margin-left">${item.name}<span class="w3-display-right">${item.score}</span></li>`;
     });
 }
 

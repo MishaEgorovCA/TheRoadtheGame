@@ -3,13 +3,16 @@
 
 <head>
     <title>The Road the Game</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
     <style>
         @font-face {
             font-family: 'CustomFont';
-            src: url('resources/customFont.TTF') format('truetype');
+            src: url('Comfortaa.eot');
+            src: url('resources/customFont.TTF') format('truetype'),
+            url('resources/customFont.svg#font') format('svg'); 
         }
 
         body {
@@ -57,7 +60,7 @@
         <!--Player Stats-->
         <div class="w3-row w3-light-gray w3-center" style="height:120px;margin:auto;width:580px;">
             <div class="w3-third w3-container">
-                <h2>Hunger</h2>
+                <h2>Consumption</h2>
                 <div class="w3-grey w3-margin">
                     <!--id="0" style="outline-style:solid;outline-width:7px;outline-color:lightgrey;"-->
                     <div class="w3-dark-grey" style="width:50%;height:24px" id="hunger"> </div>
@@ -126,7 +129,7 @@
                 <h2>Tutorial</h2>
                 <p>This game is based on the mobile game "Reigns"</p>
                 <p>The goal of the game is to survive as long as you can.</p>
-                <p>To survive you must balance your hunger, health, and sanity.</p>
+                <p>To survive you must balance your consumption, health, and sanity.</p>
                 <p>You will be met with scenarios and must make a choice in each.</p>
                 <p>The choices you make will affect your stats. Don't let them fall to zero!</p>
                 <p>Even having too much of a stat may be detrimental, so try to balance your stats.</p>
